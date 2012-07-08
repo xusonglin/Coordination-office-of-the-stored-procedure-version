@@ -1,0 +1,25 @@
+﻿/**
+* oneXpath.aspx页面用到的CSS
+* @author 张浩春 2012-3-24
+*/
+
+
+table td input {
+    width: 500px;
+    margin-left: 10px;
+    background-color: #EEEEE8;
+}
+table td {
+    background-color: white;
+    height: 30px;
+}
+input {
+    display: none;
+}
+span {
+    margin-left: 10px;
+}
+select {
+    margin-left: 10px;
+    display: none;
+}

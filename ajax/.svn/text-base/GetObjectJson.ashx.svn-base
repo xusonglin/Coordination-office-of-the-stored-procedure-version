@@ -1,0 +1,60 @@
+﻿<%@ WebHandler Language="C#" Class="GetObjectJson" %>
+
+using System;
+using System.Web;
+using System.Collections.Generic;
+using NewStart.Model;
+using NewStart.BLLAccess;
+
+public class GetObjectJson : IHttpHandler
+{
+
+    public void ProcessRequest(HttpContext context)
+    {
+        context.Response.ContentType = "text/plain";
+        context.Response.Expires = 0;
+        string TabName = context.Request.QueryString["TabName"];
+        string page =context.Request.QueryString["page"];
+        string rows = context.Request.QueryString["rows"];
+        string name=context.Request.QueryString["name"];
+        string result = string.Empty;
+        switch (TabName)
+        {
+            case "T_Customer":
+                List<CustomerInfo> listCustomer = new List<CustomerInfo>();
+                CustomerInfo ci = null;
+                for (int i = 1; i <= 20; i++)
+                {
+                    ci = new CustomerInfo()
+                    {
+                        CustomerId = i,
+                        CustomerName = "客户名称1",
+                        CredCode = "431223456" + i,
+                        CustomerLink = "13487312472",
+                        Owner = "alovejun" + i,
+                        CustomerAddress = "湖南长沙怀化" + i,
+                        Email = "alovejun@yahoo.cn",
+                        QQ = "284859969",
+                        Remark = "暂无信息说明" + i
+                    };
+                    listCustomer.Add(ci);
+                }
+                result = JsonEasyUI.onDataGrid(listCustomer, listCustomer.Count);
+                break;
+            default:
+                break;
+                
+                
+        }
+        context.Response.Write(result);
+    }
+
+    public bool IsReusable
+    {
+        get
+        {
+            return false;
+        }
+    }
+
+}

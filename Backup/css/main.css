@@ -1,0 +1,249 @@
+﻿html
+{
+    overflow: hidden;
+}
+*
+{
+    font-size: 12px;
+}
+a
+{
+    outline: none;
+}
+body
+{
+    margin: 0px;
+    padding: 0px;
+    background: #fff;
+}
+a:visited
+{
+    blur: expression(this.hideFocus=this.blur());
+}
+a:link
+{
+    text-decoration: none;
+    color: #1B5978;
+}
+a:visited
+{
+    text-decoration: none;
+    color: #1B5978;
+}
+a:hover
+{
+    text-decoration: underline;
+    color: red;
+}
+p
+{
+    line-height: 200%;
+}
+.tool-add
+{
+    background-image: url('../images/edit_add.png') !important;
+}
+.tool-edit
+{
+    background-image: url('../images/pencil.png') !important;
+}
+.tool-delete
+{
+    background-image: url('../images/edit_remove.png') !important;
+}
+.tool-cut
+{
+    background-image: url('../images/cut.png') !important;
+}
+.tool-save
+{
+    background-image: url('../images/filesave.png') !important;
+}
+.tool-find
+{
+    background-image: url('../images/kmag.png') !important;
+}
+.nav-opt
+{
+    background-image: url('../images/kcmsystem.png') !important;
+}
+.nav-config
+{
+    background-image: url('../images/wizard.png') !important;
+}
+#header
+{
+
+}
+#footer
+{
+    height: 40px;
+    line-height: 40px;
+    background-image: url(../images/buttom-copy-bg.gif);
+    text-align: right;
+    padding-right: 10px;
+}
+.content
+{
+    vertical-align: top;
+    width: 182px;
+}
+.content ul
+{
+    width: 180px;
+    margin: 0px;
+    padding: 0px;
+}
+.content ul li
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 26px;
+    color: #333333;
+    list-style-type: none;
+    text-decoration: none;
+    height: 26px;
+    width: 180px;
+    text-align: center;
+    background-image: url(../images/menu_bg1.gif);
+    background-repeat: no-repeat;
+}
+.content ul li a:link
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 26px;
+    color: #333333;
+    background-image: url(../images/menu_bg1.gif);
+    background-repeat: no-repeat;
+    height: 26px;
+    width: 180px;
+    display: block;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    text-decoration: none;
+}
+.content ul li a:visited
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 26px;
+    color: #333333;
+    background-image: url(../images/menu_bg1.gif);
+    background-repeat: no-repeat;
+    display: block;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    height: 26px;
+    width: 180px;
+    text-decoration: none;
+}
+.content ul li a:active
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 26px;
+    color: #333333;
+    background-image: url(../images/menu_bg1.gif);
+    background-repeat: no-repeat;
+    height: 26px;
+    width: 180px;
+    display: block;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    text-decoration: none;
+}
+.content ul li a:hover
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 26px;
+    font-weight: bold;
+    color: #006600;
+    background-image: url(../images/menu_bg2.gif);
+    background-repeat: no-repeat;
+    text-align: center;
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    height: 26px;
+    width: 180px;
+    text-decoration: none;
+}
+
+
+/***********************************************************************************************************/
+#south{
+    overflow:hidden;
+    height:36px;
+    line-height:27px;
+    text-align:center;
+    background:#D2E0F2;
+    color:#3278A2;
+    font-size:13px;
+    font-weight:600;
+}
+
+#south a:link{
+    color:#6091B4;
+    font-size:13px;
+    text-decoration: none;
+}
+
+#south a:visited{
+    color:#6091B4;
+    font-size:13px;
+    text-decoration: none;
+}
+
+#south a:hover{
+    color:#000;
+    font-size:13px;
+    text-decoration:underline;
+}
+
+#south a:active{
+    color:#000;
+    font-size:13px;
+    text-decoration: none;
+}
+
+#nav ul{
+    margin-top:10px;
+    list-style: square;
+}
+
+#nav ul li{
+    margin:8px 0 8px 0;
+}
+
+#nav a:link{
+    color:#15428B;
+    font-size:13px;
+    font-weight:600;
+    text-decoration: none;
+}
+#nav a:visited{
+    color:#15428B;
+    font-size:13px;
+    font-weight:600;
+    text-decoration: none;
+}
+#nav a:hover{
+    color:red;
+    font-size:13px;
+    font-weight:600;
+    text-decoration: none;
+}
+#nav a:active{
+    color:red;
+    font-size:13px;
+    font-weight:600;
+    text-decoration: none;
+}
+

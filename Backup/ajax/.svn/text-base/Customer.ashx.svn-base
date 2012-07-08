@@ -1,0 +1,133 @@
+﻿<%@ WebHandler Language="C#" Class="Customer" %>
+
+using System;
+using System.Web;
+using System.Collections.Generic;
+using NewStart.Model;
+using NewStart.BLLAccess;
+
+public class Customer : IHttpHandler
+{
+
+    public void ProcessRequest(HttpContext context)
+    {
+        context.Response.ContentType = "text/plain";
+        context.Response.Expires = 0;
+        string Action = context.Request.QueryString["Action"];
+        string result = "true";
+        switch (Action)
+        {
+            case "Add":
+                result = Add(context);
+                break;
+            case "Edit":
+                result = Edit(context);
+                break;
+            case "List":
+                result = GetAll(context);
+                break;
+            case "Delete":
+                result = Delete(context);
+                break;
+            case "Query":
+                result=GetAllByAny(context);
+                break;
+        }
+        context.Response.Write(result);
+    }
+
+    /// <summary>
+    /// 添加
+    /// </summary>
+    private static string Add(HttpContext context)
+    {
+        string CustomerName = context.Request.QueryString["CustomerName"];
+        string CredCode = context.Request.QueryString["CredCode"];
+        string Owner = context.Request.QueryString["Owner"];
+        string CustomerLink = context.Request.QueryString["CustomerLink"];
+        string Email = context.Request.QueryString["Email"];
+        string QQ = context.Request.QueryString["QQ"];
+        string CustomerAddress = context.Request.QueryString["CustomerAddress"];
+        string Remark = context.Request.QueryString["Remark"];
+        CustomerInfo ci = new CustomerInfo()
+        {
+            CustomerName = CustomerName,
+            CredCode = CredCode,
+            Owner = Owner,
+            CustomerLink = CustomerLink,
+            Email = Email,
+            QQ = QQ,
+            CustomerAddress = CustomerAddress,
+            Remark = Remark
+        };
+        return RCustomer.Add(ci).ToString().ToLower();
+    }
+
+    /// <summary>
+    /// 修改
+    /// </summary>
+    public static string Edit(HttpContext context)
+    {
+        int CustomerId = Convert.ToInt32(context.Request.QueryString["CustomerId"].ToString());
+        string CustomerNames = context.Request.QueryString["CustomerName"];
+        string CredCodes = context.Request.QueryString["CredCode"];
+        string Owners = context.Request.QueryString["Owner"];
+        string CustomerLinks = context.Request.QueryString["CustomerLink"];
+        string Emails = context.Request.QueryString["Email"];
+        string QQs = context.Request.QueryString["QQ"];
+        string CustomerAddresss = context.Request.QueryString["CustomerAddress"];
+        string Remarks = context.Request.QueryString["Remark"];
+        CustomerInfo cis = new CustomerInfo()
+        {
+            CustomerId = CustomerId,
+            CustomerName = CustomerNames,
+            CredCode = CredCodes,
+            Owner = Owners,
+            CustomerLink = CustomerLinks,
+            Email = Emails,
+            QQ = QQs,
+            CustomerAddress = CustomerAddresss,
+            Remark = Remarks
+        };
+        return RCustomer.Update(cis).ToString().ToLower();
+    }
+
+    /// <summary>
+    /// 删除
+    /// </summary>
+    private static string Delete(HttpContext context)
+    {
+        int CustomerId = Convert.ToInt32(context.Request.QueryString["CustomerId"].ToString());
+        return RCustomer.Delete(CustomerId).ToString().ToLower();
+    }
+
+    /// <summary>
+    /// 获取所有数据
+    /// </summary>
+    private static string GetAll(HttpContext context)
+    {
+        List<CustomerInfo> listCustomer = RCustomer.GetAll();
+        return JsonEasyUI.onDataGrid(listCustomer, listCustomer.Count);
+    }
+
+    /// <summary>
+    /// 根据条件获取数据
+    /// </summary>
+    private static string GetAllByAny(HttpContext context)
+    {
+        string CustomerName = context.Request.QueryString["CustomerName"];
+        int page = Convert.ToInt32(context.Request.QueryString["page"]);
+        int rows = Convert.ToInt32(context.Request.QueryString["rows"]);
+        List<CustomerInfo> listCustomer = RCustomer.GetAllByAny(CustomerName);
+        return JsonEasyUI.onDataGrid(listCustomer, page, rows);
+    }
+
+    public bool IsReusable
+    {
+        get
+        {
+            return false;
+        }
+    }
+
+}

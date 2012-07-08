@@ -1,0 +1,22 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TreatiseStatistics.aspx.cs" Inherits="JiaoShiXinXiTongJi.treatise.TreatiseStatistics" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+   <link href="../themes/default/easyui.css" rel="stylesheet" type="text/css" />
+    <link href="../themes/icon.css" rel="stylesheet" type="text/css" />
+    <script src="../js/jquery-1.4.2.js" type="text/javascript"></script>
+    <script src="../js/jquery.easyui.min.js" type="text/javascript"></script>
+    <script src="../js/easyui-lang-zh_CN.js" type="text/javascript"></script>
+    <link href="../css/content.css" rel="stylesheet" type="text/css" />
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div region="center" border="false">
+     <img src="TreatiseBar.aspx" alt="论文统计图" />
+    </div>
+    </form>
+</body>
+</html>

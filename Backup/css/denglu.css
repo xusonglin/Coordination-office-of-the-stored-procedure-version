@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS Document */
+body{ margin:0; padding:0; font-size:12px;}
+#total{ width:515px; height:261px; background:url(../images/logon.jpg) no-repeat; padding-top:185px; padding-left:330px; position:absolute; top:50%; left:50%; margin:-223px 0 0 -422px;}
+.thdiv{ width:260px; height:130px;}
+.theline{ width:260px; height:25px; margin:0 0 8px 0;}
+.username{ width:80px; height:25px; text-align:center; color:#ff6600; float:left; line-height:25px;}
+.biaodan{ width:170px; height:22px; float:left; padding-top:3px;}
+.biaodan2{ width:70px; height:22px; float:left; padding-top:3px;}
+.biaodan3{ width:80px; height:25px; float:left; }
+.biaodan4{ width:180px; height:30px;  text-align:center; }
+
+.theline2{ width:260px; height:25px; margin:0 0 11px 0;}
+.theput{ width:160px; height:18px; border:1px solid #cccccc; line-height:18px;}
+.code{width:60px; height:18px; border:1px solid #cccccc; line-height:18px;}
+.codeimg{ width:60px; height:20px; float:left; padding-top:2px;}
+.thebut{ width:54px; height:24px; background:url(../images/bg/bt.jpg) no-repeat; color:#626669; border:none; line-height:24px;}
+.thebutt{ width:54px; height:24px; background:url(../images/bg/btt.jpg) no-repeat; color:#626669; border:none; line-height:24px;}
+.dengbott{ width:845px; height:80px; position:absolute; left:0px; bottom:0; text-align:center;}
+.dengbott p{ line-height:25px; margin:0; padding:0; color:#666;}

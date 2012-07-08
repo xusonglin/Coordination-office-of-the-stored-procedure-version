@@ -1,0 +1,29 @@
+﻿/********************************修改个人信息css style******************************************/
+form {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 14px;
+   table-layout:fixed;
+   color:#15428B;
+   font-weight:500;
+}
+
+#Table1
+{
+    height:30px;
+    line-height:30px;
+}
+
+
+/********************************任务发布css style******************************************/
+#table
+{
+    width: 600px;
+    color:#15428B;
+    font-weight:600;
+}
+ 
+#table tr td
+{
+    height:36px;
+    line-height:36px;
+}

@@ -1,0 +1,2430 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{236993DF-17BA-40FB-99D8-D93D9123F07C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JiaoShiXinXiTongJi</RootNamespace>
+    <AssemblyName>JiaoShiXinXiTongJi</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Cells, Version=4.1.0.0, Culture=neutral, PublicKeyToken=9a40d5a4b59e5256" />
+    <Reference Include="C_R, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\C_R\obj\Debug\C_R.dll</HintPath>
+    </Reference>
+    <Reference Include="DAO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DAO\obj\Debug\DAO.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.0.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL" />
+    <Reference Include="Maticsoft.DBUtility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WebApplication1\bin\Maticsoft.DBUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="pojo, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\pojo\obj\Debug\pojo.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="Util, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Util\obj\Debug\Util.dll</HintPath>
+    </Reference>
+    <Reference Include="ZedGraph, Version=5.1.5.28844, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL" />
+    <Reference Include="ZedGraph.resources, Version=5.1.5.28844, Culture=zh-cn, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL" />
+    <Reference Include="ZedGraph.Web, Version=5.1.5.29221, Culture=neutral, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\content.css" />
+    <Content Include="css\main.css" />
+    <Content Include="js\images\accordion_collapse.png" />
+    <Content Include="js\images\accordion_expand.png" />
+    <Content Include="js\images\arrow_down.gif" />
+    <Content Include="js\images\arrow_up.gif" />
+    <Content Include="js\images\banner.gif" />
+    <Content Include="js\images\bootnbg.jpg" />
+    <Content Include="js\images\buttom-copy-bg.gif" />
+    <Content Include="js\images\buttom_bgs.gif" />
+    <Content Include="js\images\buttom_left2.gif" />
+    <Content Include="js\images\buttom_right2.gif" />
+    <Content Include="js\images\button_a_bg.gif" />
+    <Content Include="js\images\button_plain_hover.png" />
+    <Content Include="js\images\button_span_bg.gif" />
+    <Content Include="js\images\calendar_nextmonth.gif" />
+    <Content Include="js\images\calendar_nextyear.gif" />
+    <Content Include="js\images\calendar_prevmonth.gif" />
+    <Content Include="js\images\calendar_prevyear.gif" />
+    <Content Include="js\images\combo_arrow.gif" />
+    <Content Include="js\images\content-bg.gif" />
+    <Content Include="js\images\datagrid_header_bg.gif" />
+    <Content Include="js\images\datagrid_row_collapse.gif" />
+    <Content Include="js\images\datagrid_row_expand.gif" />
+    <Content Include="js\images\datagrid_sort_asc.gif" />
+    <Content Include="js\images\datagrid_sort_desc.gif" />
+    <Content Include="js\images\datagrid_title_bg.gif" />
+    <Content Include="js\images\icon-demo.gif" />
+    <Content Include="js\images\icon-login-seaver.gif" />
+    <Content Include="js\images\layout_button_down.gif" />
+    <Content Include="js\images\layout_button_left.gif" />
+    <Content Include="js\images\layout_button_right.gif" />
+    <Content Include="js\images\layout_button_up.gif" />
+    <Content Include="js\images\left-top-right.gif" />
+    <Content Include="js\images\login-buttom-bg.gif" />
+    <Content Include="js\images\login-content-bg.gif" />
+    <Content Include="js\images\login-top-bg.gif" />
+    <Content Include="js\images\login-wel.gif" />
+    <Content Include="js\images\login_bg.jpg" />
+    <Content Include="js\images\logo.gif" />
+    <Content Include="js\images\logo.png" />
+    <Content Include="js\images\mail_leftbg.gif" />
+    <Content Include="js\images\mail_rightbg.gif" />
+    <Content Include="js\images\menu.gif" />
+    <Content Include="js\images\menu_bg.gif" />
+    <Content Include="js\images\menu_bg1.gif" />
+    <Content Include="js\images\menu_bg2.gif" />
+    <Content Include="js\images\menu_bgs.gif" />
+    <Content Include="js\images\menu_bottom.gif" />
+    <Content Include="js\images\menu_downarrow.png" />
+    <Content Include="js\images\menu_rightarrow.png" />
+    <Content Include="js\images\menu_sep.png" />
+    <Content Include="js\images\menu_split_downarrow.png" />
+    <Content Include="js\images\menu_topline.gif" />
+    <Content Include="js\images\messager_error.gif" />
+    <Content Include="js\images\messager_info.gif" />
+    <Content Include="js\images\messager_question.gif" />
+    <Content Include="js\images\messager_warning.gif" />
+    <Content Include="js\images\msn.gif" />
+    <Content Include="js\images\nav-right-bg.gif" />
+    <Content Include="js\images\out.gif" />
+    <Content Include="js\images\pagination_first.gif" />
+    <Content Include="js\images\pagination_last.gif" />
+    <Content Include="js\images\pagination_load.png" />
+    <Content Include="js\images\pagination_loading.gif" />
+    <Content Include="js\images\pagination_next.gif" />
+    <Content Include="js\images\pagination_prev.gif" />
+    <Content Include="js\images\panel_header_bg.gif" />
+    <Content Include="js\images\panel_loading.gif" />
+    <Content Include="js\images\panel_title.gif" />
+    <Content Include="js\images\panel_tools.gif" />
+    <Content Include="js\images\panel_tool_collapse.gif" />
+    <Content Include="js\images\panel_tool_expand.gif" />
+    <Content Include="js\images\search.png" />
+    <Content Include="js\images\spinner_arrow_down.gif" />
+    <Content Include="js\images\spinner_arrow_up.gif" />
+    <Content Include="js\images\tabs_close.gif" />
+    <Content Include="js\images\tabs_enabled.gif" />
+    <Content Include="js\images\tabs_leftarrow.png" />
+    <Content Include="js\images\tabs_rightarrow.png" />
+    <Content Include="js\images\top-right.gif" />
+    <Content Include="js\images\top_bt.jpg" />
+    <Content Include="js\images\tree_arrows.gif" />
+    <Content Include="js\images\tree_checkbox_0.gif" />
+    <Content Include="js\images\tree_checkbox_1.gif" />
+    <Content Include="js\images\tree_checkbox_2.gif" />
+    <Content Include="js\images\tree_dnd_no.png" />
+    <Content Include="js\images\tree_dnd_yes.png" />
+    <Content Include="js\images\tree_file.gif" />
+    <Content Include="js\images\tree_folder.gif" />
+    <Content Include="js\images\tree_folder_open.gif" />
+    <Content Include="js\images\tree_loading.gif" />
+    <Content Include="js\images\validatebox_pointer.gif" />
+    <Content Include="js\images\validatebox_warning.png" />
+    <Content Include="js\easyui-lang-zh_CN.js" />
+    <Content Include="js\jquery-1.4.2-vsdoc.js" />
+    <Content Include="js\jquery-1.4.2.js" />
+    <Content Include="js\jquery.easyui.min.js" />
+    <Content Include="themes\default\easyui.css" />
+    <Content Include="themes\default\images\accordion_collapse.png" />
+    <Content Include="themes\default\images\accordion_expand.png" />
+    <Content Include="themes\default\images\button_a_bg.gif" />
+    <Content Include="themes\default\images\button_plain_hover.png" />
+    <Content Include="themes\default\images\button_span_bg.gif" />
+    <Content Include="themes\default\images\calendar_nextmonth.gif" />
+    <Content Include="themes\default\images\calendar_nextyear.gif" />
+    <Content Include="themes\default\images\calendar_prevmonth.gif" />
+    <Content Include="themes\default\images\calendar_prevyear.gif" />
+    <Content Include="themes\default\images\combo_arrow.gif" />
+    <Content Include="themes\default\images\datagrid_header_bg.gif" />
+    <Content Include="themes\default\images\datagrid_row_collapse.gif" />
+    <Content Include="themes\default\images\datagrid_row_expand.gif" />
+    <Content Include="themes\default\images\datagrid_sort_asc.gif" />
+    <Content Include="themes\default\images\datagrid_sort_desc.gif" />
+    <Content Include="themes\default\images\datagrid_title_bg.gif" />
+    <Content Include="themes\default\images\datagrid_title_bg.png" />
+    <Content Include="themes\default\images\dialog_content_bg.gif" />
+    <Content Include="themes\default\images\dialog_tools.gif" />
+    <Content Include="themes\default\images\dmenu_down_arrow.gif" />
+    <Content Include="themes\default\images\dmenu_enabled.png" />
+    <Content Include="themes\default\images\dmenu_hover.png" />
+    <Content Include="themes\default\images\dmenu_right_arrow.gif" />
+    <Content Include="themes\default\images\dmenu_sep.png" />
+    <Content Include="themes\default\images\dmenu_test_fileprint.png" />
+    <Content Include="themes\default\images\dmenu_test_graphics.png" />
+    <Content Include="themes\default\images\dmenu_test_home.png" />
+    <Content Include="themes\default\images\layout_button_down.gif" />
+    <Content Include="themes\default\images\layout_button_left.gif" />
+    <Content Include="themes\default\images\layout_button_right.gif" />
+    <Content Include="themes\default\images\layout_button_up.gif" />
+    <Content Include="themes\default\images\layout_collapse_down.gif" />
+    <Content Include="themes\default\images\layout_collapse_left.gif" />
+    <Content Include="themes\default\images\layout_collapse_right.gif" />
+    <Content Include="themes\default\images\layout_collapse_up.gif" />
+    <Content Include="themes\default\images\layout_split_h.gif" />
+    <Content Include="themes\default\images\layout_split_v.gif" />
+    <Content Include="themes\default\images\layout_title.png" />
+    <Content Include="themes\default\images\menu.gif" />
+    <Content Include="themes\default\images\menu_downarrow.png" />
+    <Content Include="themes\default\images\menu_rightarrow.png" />
+    <Content Include="themes\default\images\menu_sep.png" />
+    <Content Include="themes\default\images\menu_split_downarrow.png" />
+    <Content Include="themes\default\images\messager_error.gif" />
+    <Content Include="themes\default\images\messager_info.gif" />
+    <Content Include="themes\default\images\messager_question.gif" />
+    <Content Include="themes\default\images\messager_warning.gif" />
+    <Content Include="themes\default\images\pagination_first.gif" />
+    <Content Include="themes\default\images\pagination_last.gif" />
+    <Content Include="themes\default\images\pagination_load.gif" />
+    <Content Include="themes\default\images\pagination_load.png" />
+    <Content Include="themes\default\images\pagination_loading.gif" />
+    <Content Include="themes\default\images\pagination_next.gif" />
+    <Content Include="themes\default\images\pagination_prev.gif" />
+    <Content Include="themes\default\images\panel_loading.gif" />
+    <Content Include="themes\default\images\panel_title.gif" />
+    <Content Include="themes\default\images\panel_title.png" />
+    <Content Include="themes\default\images\panel_tools.gif" />
+    <Content Include="themes\default\images\panel_tool_collapse.gif" />
+    <Content Include="themes\default\images\panel_tool_expand.gif" />
+    <Content Include="themes\default\images\shadow_total.png" />
+    <Content Include="themes\default\images\spinner_arrow_down.gif" />
+    <Content Include="themes\default\images\spinner_arrow_up.gif" />
+    <Content Include="themes\default\images\tabs_active.png" />
+    <Content Include="themes\default\images\tabs_close.gif" />
+    <Content Include="themes\default\images\tabs_enabled.gif" />
+    <Content Include="themes\default\images\tabs_enabled.png" />
+    <Content Include="themes\default\images\tabs_leftarrow.png" />
+    <Content Include="themes\default\images\tabs_rightarrow.png" />
+    <Content Include="themes\default\images\tree_arrows.gif" />
+    <Content Include="themes\default\images\tree_checkbox_0.gif" />
+    <Content Include="themes\default\images\tree_checkbox_1.gif" />
+    <Content Include="themes\default\images\tree_checkbox_2.gif" />
+    <Content Include="themes\default\images\tree_collapsed.gif" />
+    <Content Include="themes\default\images\tree_dnd_no.png" />
+    <Content Include="themes\default\images\tree_dnd_yes.png" />
+    <Content Include="themes\default\images\tree_expanded.gif" />
+    <Content Include="themes\default\images\tree_file.gif" />
+    <Content Include="themes\default\images\tree_folder.gif" />
+    <Content Include="themes\default\images\tree_folder_open.gif" />
+    <Content Include="themes\default\images\tree_loading.gif" />
+    <Content Include="themes\default\images\validatebox_pointer.gif" />
+    <Content Include="themes\default\images\validatebox_warning.png" />
+    <Content Include="themes\icon.css" />
+    <Content Include="themes\icons\back.png" />
+    <Content Include="themes\icons\cancel.png" />
+    <Content Include="themes\icons\cut.png" />
+    <Content Include="themes\icons\edit_add.png" />
+    <Content Include="themes\icons\edit_remove.png" />
+    <Content Include="themes\icons\filesave.png" />
+    <Content Include="themes\icons\help.png" />
+    <Content Include="themes\icons\no.png" />
+    <Content Include="themes\icons\ok.png" />
+    <Content Include="themes\icons\pencil.png" />
+    <Content Include="themes\icons\print.png" />
+    <Content Include="themes\icons\redo.png" />
+    <Content Include="themes\icons\reload.png" />
+    <Content Include="themes\icons\search.png" />
+    <Content Include="themes\icons\undo.png" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common.cs" />
+    <Compile Include="CourseRemind\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CourseRemind\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CourseRemind\CourseRemindHandler_.ashx.cs">
+      <DependentUpon>CourseRemindHandler_.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="CourseRemind\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CourseRemind\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CourseRemind\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CourseRemind\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CourseRemind\PerCourse.aspx.cs">
+      <DependentUpon>PerCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CourseRemind\PerCourse.aspx.designer.cs">
+      <DependentUpon>PerCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DaoRu\DataShow.aspx.cs">
+      <DependentUpon>DataShow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DaoRu\DataShow.aspx.designer.cs">
+      <DependentUpon>DataShow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DaoRu\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DaoRu\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DaoRu\main.aspx.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DaoRu\main.aspx.designer.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DepHandler.ashx.cs">
+      <DependentUpon>DepHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Forum.ashx.cs">
+      <DependentUpon>Forum.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetFunction.ashx.cs">
+      <DependentUpon>GetFunction.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetRole.ashx.cs">
+      <DependentUpon>GetRole.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetSchool.ashx.cs">
+      <DependentUpon>GetSchool.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetTask_.ashx.cs">
+      <DependentUpon>GetTask_.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Handler.ashx.cs">
+      <DependentUpon>Handler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\HandlerCom.ashx.cs">
+      <DependentUpon>HandlerCom.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SchHandler.ashx.cs">
+      <DependentUpon>SchHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TeaHandler.ashx.cs">
+      <DependentUpon>TeaHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forum\ForumTest.aspx.cs">
+      <DependentUpon>ForumTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forum\ForumTest.aspx.designer.cs">
+      <DependentUpon>ForumTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forum\HfUpdate.aspx.cs">
+      <DependentUpon>HfUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forum\HfUpdate.aspx.designer.cs">
+      <DependentUpon>HfUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Function.cs" />
+    <Compile Include="logon.aspx.cs">
+      <DependentUpon>logon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logon.aspx.designer.cs">
+      <DependentUpon>logon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleManager\Role.aspx.cs">
+      <DependentUpon>Role.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RoleManager\Role.aspx.designer.cs">
+      <DependentUpon>Role.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Session.aspx.cs">
+      <DependentUpon>Session.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Session.aspx.designer.cs">
+      <DependentUpon>Session.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Systems\Function.aspx.cs">
+      <DependentUpon>Function.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Systems\Function.aspx.designer.cs">
+      <DependentUpon>Function.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Systems\LoadInfo.aspx.cs">
+      <DependentUpon>LoadInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Systems\LoadInfo.aspx.designer.cs">
+      <DependentUpon>LoadInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Task\DownLoad.aspx.cs">
+      <DependentUpon>DownLoad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Task\DownLoad.aspx.designer.cs">
+      <DependentUpon>DownLoad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Task\EditeTask.aspx.cs">
+      <DependentUpon>EditeTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Task\EditeTask.aspx.designer.cs">
+      <DependentUpon>EditeTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Task\myTask.aspx.cs">
+      <DependentUpon>myTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Task\myTask.aspx.designer.cs">
+      <DependentUpon>myTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Task\myTaskYear.aspx.cs">
+      <DependentUpon>myTaskYear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Task\myTaskYear.aspx.designer.cs">
+      <DependentUpon>myTaskYear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Task\TaskDesing.aspx.cs">
+      <DependentUpon>TaskDesing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Task\TaskDesing.aspx.designer.cs">
+      <DependentUpon>TaskDesing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Task\TaskInfo.aspx.cs">
+      <DependentUpon>TaskInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Task\TaskInfo.aspx.designer.cs">
+      <DependentUpon>TaskInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Task\TaskManager.aspx.cs">
+      <DependentUpon>TaskManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Task\TaskManager.aspx.designer.cs">
+      <DependentUpon>TaskManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Task\TaskPass.aspx.cs">
+      <DependentUpon>TaskPass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Task\TaskPass.aspx.designer.cs">
+      <DependentUpon>TaskPass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Task\ViewTask.aspx.cs">
+      <DependentUpon>ViewTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Task\ViewTask.aspx.designer.cs">
+      <DependentUpon>ViewTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="treatise\addTreatiese.aspx.cs">
+      <DependentUpon>addTreatiese.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="treatise\addTreatiese.aspx.designer.cs">
+      <DependentUpon>addTreatiese.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="treatise\addXPath.aspx.cs">
+      <DependentUpon>addXPath.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="treatise\addXPath.aspx.designer.cs">
+      <DependentUpon>addXPath.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="treatise\myTreatise.aspx.cs">
+      <DependentUpon>myTreatise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="treatise\myTreatise.aspx.designer.cs">
+      <DependentUpon>myTreatise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="treatise\onePath.aspx.cs">
+      <DependentUpon>onePath.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="treatise\onePath.aspx.designer.cs">
+      <DependentUpon>onePath.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="treatise\oneTreatise.aspx.cs">
+      <DependentUpon>oneTreatise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="treatise\oneTreatise.aspx.designer.cs">
+      <DependentUpon>oneTreatise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="treatise\TreadtieseHandler_.ashx.cs">
+      <DependentUpon>TreadtieseHandler_.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="treatise\treatiseBar.aspx.cs">
+      <DependentUpon>treatiseBar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="treatise\treatiseBar.aspx.designer.cs">
+      <DependentUpon>treatiseBar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="treatise\TreatiseStatistics.aspx.cs">
+      <DependentUpon>TreatiseStatistics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="treatise\TreatiseStatistics.aspx.designer.cs">
+      <DependentUpon>TreatiseStatistics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="treatise\xpathList.aspx.cs">
+      <DependentUpon>xpathList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="treatise\xpathList.aspx.designer.cs">
+      <DependentUpon>xpathList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="USER\Department.aspx.cs">
+      <DependentUpon>Department.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="USER\Department.aspx.designer.cs">
+      <DependentUpon>Department.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="USER\myinfo.aspx.cs">
+      <DependentUpon>myinfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="USER\myinfo.aspx.designer.cs">
+      <DependentUpon>myinfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="USER\School.aspx.cs">
+      <DependentUpon>School.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="USER\School.aspx.designer.cs">
+      <DependentUpon>School.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="USER\Teacher.aspx.cs">
+      <DependentUpon>Teacher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="USER\Teacher.aspx.designer.cs">
+      <DependentUpon>Teacher.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ajax\.svn\all-wcprops" />
+    <None Include="ajax\.svn\entries" />
+    <None Include="ajax\.svn\text-base\Customer.ashx.svn-base" />
+    <None Include="ajax\.svn\text-base\GetCity.ashx.svn-base" />
+    <None Include="ajax\.svn\text-base\GetObjectJson.ashx.svn-base" />
+    <None Include="ajax\.svn\tmp\GetObjectJson.ashx.tmp" />
+    <None Include="bin\celllic.lic" />
+    <Content Include="bin\ZedGraph.dll" />
+    <Content Include="bin\ZedGraph.resources.dll" />
+    <Content Include="bin\ZedGraph.Web.dll" />
+    <Content Include="CourseRemind\CourseRemindHandler_.ashx" />
+    <None Include="css\.svn\all-wcprops" />
+    <None Include="css\.svn\entries" />
+    <None Include="css\.svn\text-base\content.css.svn-base" />
+    <None Include="css\.svn\text-base\login.css.svn-base" />
+    <None Include="css\.svn\text-base\main.css.svn-base" />
+    <None Include="css\.svn\tmp\main.css.tmp" />
+    <Content Include="bin\Aspose.Cells.dll" />
+    <Content Include="bin\Interop.Excel.dll" />
+    <Content Include="bin\IntranetAnalysis.dll" />
+    <Content Include="bin\JiaoShiXinXiTongJi.dll" />
+    <Content Include="bin\Maticsoft.DBUtility.dll" />
+    <Content Include="CourseRemind\Add.aspx" />
+    <Content Include="CourseRemind\Edit.aspx" />
+    <Content Include="CourseRemind\List.aspx" />
+    <Content Include="CourseRemind\PerCourse.aspx" />
+    <Content Include="css\denglu.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\update_info.css" />
+    <Content Include="DaoRu\DataShow.aspx" />
+    <Content Include="DaoRu\Default.aspx" />
+    <Content Include="DaoRu\js\demo\accordion.html" />
+    <Content Include="DaoRu\js\demo\calendar.html" />
+    <Content Include="DaoRu\js\demo\combo.html" />
+    <Content Include="DaoRu\js\demo\combobox.html" />
+    <Content Include="DaoRu\js\demo\combogrid.html" />
+    <Content Include="DaoRu\js\demo\combotree.html" />
+    <Content Include="DaoRu\js\demo\datagrid.html" />
+    <Content Include="DaoRu\js\demo\datagrid2.html" />
+    <Content Include="DaoRu\js\demo\datagrid3.html" />
+    <Content Include="DaoRu\js\demo\datagrid4.html" />
+    <Content Include="DaoRu\js\demo\datagrid5.html" />
+    <Content Include="DaoRu\js\demo\datebox.html" />
+    <Content Include="DaoRu\js\demo\datetimebox.html" />
+    <Content Include="DaoRu\js\demo\dialog.html" />
+    <Content Include="DaoRu\js\demo\draggable.html" />
+    <Content Include="DaoRu\js\demo\droppable.html" />
+    <Content Include="DaoRu\js\demo\droppable1.html" />
+    <Content Include="DaoRu\js\demo\droppable2.html" />
+    <Content Include="DaoRu\js\demo\easyloader.html" />
+    <Content Include="DaoRu\js\demo\form.html" />
+    <Content Include="DaoRu\js\demo\layout.html" />
+    <Content Include="DaoRu\js\demo\layout1.html" />
+    <Content Include="DaoRu\js\demo\layout2.html" />
+    <Content Include="DaoRu\js\demo\linkbutton.html" />
+    <Content Include="DaoRu\js\demo\menu.html" />
+    <Content Include="DaoRu\js\demo\menubutton.html" />
+    <Content Include="DaoRu\js\demo\messager.html" />
+    <Content Include="DaoRu\js\demo\numberbox.html" />
+    <Content Include="DaoRu\js\demo\numberspinner.html" />
+    <Content Include="DaoRu\js\demo\pagination.html" />
+    <Content Include="DaoRu\js\demo\panel.html" />
+    <Content Include="DaoRu\js\demo\resizable.html" />
+    <Content Include="DaoRu\js\demo\splitbutton.html" />
+    <Content Include="DaoRu\js\demo\tabs.html" />
+    <Content Include="DaoRu\js\demo\tabs_href_test.html" />
+    <Content Include="DaoRu\js\demo\timespinner.html" />
+    <Content Include="DaoRu\js\demo\tree.html" />
+    <Content Include="DaoRu\js\demo\tree2.html" />
+    <Content Include="DaoRu\js\demo\treegrid.html" />
+    <Content Include="DaoRu\js\demo\validatebox.html" />
+    <Content Include="DaoRu\js\demo\window.html" />
+    <Content Include="DaoRu\js\easyloader.js" />
+    <Content Include="DaoRu\js\jquery-1.4.4.min.js" />
+    <Content Include="DaoRu\js\jquery.easyui.min.js" />
+    <Content Include="DaoRu\js\locale\easyui-lang-af.js" />
+    <Content Include="DaoRu\js\locale\easyui-lang-bg.js" />
+    <Content Include="DaoRu\js\locale\easyui-lang-ca.js" />
+    <Content Include="DaoRu\js\locale\easyui-lang-cs.js" />
+    <Content Include="DaoRu\js\locale\easyui-lang-da.js" />
+    <Content Include="DaoRu\js\locale\easyui-lang-de.js" />
+    <Content Include="DaoRu\js\locale\easyui-lang-en.js" />
+    <Content Include="DaoRu\js\locale\easyui-lang-fr.js" />
+    <Content Include="DaoRu\js\locale\easyui-lang-nl.js" />
+    <Content Include="DaoRu\js\locale\easyui-lang-zh_CN.js" />
+    <Content Include="DaoRu\js\locale\easyui-lang-zh_TW.js" />
+    <Content Include="DaoRu\js\plugins\jquery.accordion.js" />
+    <Content Include="DaoRu\js\plugins\jquery.calendar.js" />
+    <Content Include="DaoRu\js\plugins\jquery.combo.js" />
+    <Content Include="DaoRu\js\plugins\jquery.combobox.js" />
+    <Content Include="DaoRu\js\plugins\jquery.combogrid.js" />
+    <Content Include="DaoRu\js\plugins\jquery.combotree.js" />
+    <Content Include="DaoRu\js\plugins\jquery.datagrid.js" />
+    <Content Include="DaoRu\js\plugins\jquery.datebox.js" />
+    <Content Include="DaoRu\js\plugins\jquery.datetimebox.js" />
+    <Content Include="DaoRu\js\plugins\jquery.dialog.js" />
+    <Content Include="DaoRu\js\plugins\jquery.draggable.js" />
+    <Content Include="DaoRu\js\plugins\jquery.droppable.js" />
+    <Content Include="DaoRu\js\plugins\jquery.form.js" />
+    <Content Include="DaoRu\js\plugins\jquery.layout.js" />
+    <Content Include="DaoRu\js\plugins\jquery.linkbutton.js" />
+    <Content Include="DaoRu\js\plugins\jquery.menu.js" />
+    <Content Include="DaoRu\js\plugins\jquery.menubutton.js" />
+    <Content Include="DaoRu\js\plugins\jquery.messager.js" />
+    <Content Include="DaoRu\js\plugins\jquery.numberbox.js" />
+    <Content Include="DaoRu\js\plugins\jquery.numberspinner.js" />
+    <Content Include="DaoRu\js\plugins\jquery.pagination.js" />
+    <Content Include="DaoRu\js\plugins\jquery.panel.js" />
+    <Content Include="DaoRu\js\plugins\jquery.parser.js" />
+    <Content Include="DaoRu\js\plugins\jquery.resizable.js" />
+    <Content Include="DaoRu\js\plugins\jquery.spinner.js" />
+    <Content Include="DaoRu\js\plugins\jquery.splitbutton.js" />
+    <Content Include="DaoRu\js\plugins\jquery.tabs.js" />
+    <Content Include="DaoRu\js\plugins\jquery.timespinner.js" />
+    <Content Include="DaoRu\js\plugins\jquery.tree.js" />
+    <Content Include="DaoRu\js\plugins\jquery.treegrid.js" />
+    <Content Include="DaoRu\js\plugins\jquery.validatebox.js" />
+    <Content Include="DaoRu\js\plugins\jquery.window.js" />
+    <Content Include="DaoRu\js\themes\default\accordion.css" />
+    <Content Include="DaoRu\js\themes\default\calendar.css" />
+    <Content Include="DaoRu\js\themes\default\combo.css" />
+    <Content Include="DaoRu\js\themes\default\combobox.css" />
+    <Content Include="DaoRu\js\themes\default\datagrid.css" />
+    <Content Include="DaoRu\js\themes\default\datebox.css" />
+    <Content Include="DaoRu\js\themes\default\dialog.css" />
+    <Content Include="DaoRu\js\themes\default\easyui.css" />
+    <Content Include="DaoRu\js\themes\default\images\accordion_collapse.png" />
+    <Content Include="DaoRu\js\themes\default\images\accordion_expand.png" />
+    <Content Include="DaoRu\js\themes\default\images\button_a_bg.gif" />
+    <Content Include="DaoRu\js\themes\default\images\button_plain_hover.png" />
+    <Content Include="DaoRu\js\themes\default\images\button_span_bg.gif" />
+    <Content Include="DaoRu\js\themes\default\images\calendar_nextmonth.gif" />
+    <Content Include="DaoRu\js\themes\default\images\calendar_nextyear.gif" />
+    <Content Include="DaoRu\js\themes\default\images\calendar_prevmonth.gif" />
+    <Content Include="DaoRu\js\themes\default\images\calendar_prevyear.gif" />
+    <Content Include="DaoRu\js\themes\default\images\combo_arrow.gif" />
+    <Content Include="DaoRu\js\themes\default\images\datagrid_header_bg.gif" />
+    <Content Include="DaoRu\js\themes\default\images\datagrid_row_collapse.gif" />
+    <Content Include="DaoRu\js\themes\default\images\datagrid_row_expand.gif" />
+    <Content Include="DaoRu\js\themes\default\images\datagrid_sort_asc.gif" />
+    <Content Include="DaoRu\js\themes\default\images\datagrid_sort_desc.gif" />
+    <Content Include="DaoRu\js\themes\default\images\datagrid_title_bg.png" />
+    <Content Include="DaoRu\js\themes\default\images\datebox_arrow.png" />
+    <Content Include="DaoRu\js\themes\default\images\layout_button_down.gif" />
+    <Content Include="DaoRu\js\themes\default\images\layout_button_left.gif" />
+    <Content Include="DaoRu\js\themes\default\images\layout_button_right.gif" />
+    <Content Include="DaoRu\js\themes\default\images\layout_button_up.gif" />
+    <Content Include="DaoRu\js\themes\default\images\menu.gif" />
+    <Content Include="DaoRu\js\themes\default\images\menu_downarrow.png" />
+    <Content Include="DaoRu\js\themes\default\images\menu_rightarrow.png" />
+    <Content Include="DaoRu\js\themes\default\images\menu_sep.png" />
+    <Content Include="DaoRu\js\themes\default\images\menu_split_downarrow.png" />
+    <Content Include="DaoRu\js\themes\default\images\messager_error.gif" />
+    <Content Include="DaoRu\js\themes\default\images\messager_info.gif" />
+    <Content Include="DaoRu\js\themes\default\images\messager_question.gif" />
+    <Content Include="DaoRu\js\themes\default\images\messager_warning.gif" />
+    <Content Include="DaoRu\js\themes\default\images\pagination_first.gif" />
+    <Content Include="DaoRu\js\themes\default\images\pagination_last.gif" />
+    <Content Include="DaoRu\js\themes\default\images\pagination_load.png" />
+    <Content Include="DaoRu\js\themes\default\images\pagination_loading.gif" />
+    <Content Include="DaoRu\js\themes\default\images\pagination_next.gif" />
+    <Content Include="DaoRu\js\themes\default\images\pagination_prev.gif" />
+    <Content Include="DaoRu\js\themes\default\images\panel_loading.gif" />
+    <Content Include="DaoRu\js\themes\default\images\panel_title.png" />
+    <Content Include="DaoRu\js\themes\default\images\panel_tools.gif" />
+    <Content Include="DaoRu\js\themes\default\images\panel_tools.png" />
+    <Content Include="DaoRu\js\themes\default\images\panel_tool_collapse.gif" />
+    <Content Include="DaoRu\js\themes\default\images\panel_tool_expand.gif" />
+    <Content Include="DaoRu\js\themes\default\images\spinner_arrow_down.gif" />
+    <Content Include="DaoRu\js\themes\default\images\spinner_arrow_up.gif" />
+    <Content Include="DaoRu\js\themes\default\images\tabs_active.png" />
+    <Content Include="DaoRu\js\themes\default\images\tabs_close.gif" />
+    <Content Include="DaoRu\js\themes\default\images\tabs_enabled.png" />
+    <Content Include="DaoRu\js\themes\default\images\tabs_leftarrow.png" />
+    <Content Include="DaoRu\js\themes\default\images\tabs_rightarrow.png" />
+    <Content Include="DaoRu\js\themes\default\images\tree_arrows.gif" />
+    <Content Include="DaoRu\js\themes\default\images\tree_checkbox_0.gif" />
+    <Content Include="DaoRu\js\themes\default\images\tree_checkbox_1.gif" />
+    <Content Include="DaoRu\js\themes\default\images\tree_checkbox_2.gif" />
+    <Content Include="DaoRu\js\themes\default\images\tree_dnd_no.png" />
+    <Content Include="DaoRu\js\themes\default\images\tree_dnd_yes.png" />
+    <Content Include="DaoRu\js\themes\default\images\tree_file.gif" />
+    <Content Include="DaoRu\js\themes\default\images\tree_folder.gif" />
+    <Content Include="DaoRu\js\themes\default\images\tree_folder_open.gif" />
+    <Content Include="DaoRu\js\themes\default\images\tree_loading.gif" />
+    <Content Include="DaoRu\js\themes\default\images\validatebox_pointer.gif" />
+    <Content Include="DaoRu\js\themes\default\images\validatebox_warning.png" />
+    <Content Include="DaoRu\js\themes\default\layout.css" />
+    <Content Include="DaoRu\js\themes\default\linkbutton.css" />
+    <Content Include="DaoRu\js\themes\default\menu.css" />
+    <Content Include="DaoRu\js\themes\default\menubutton.css" />
+    <Content Include="DaoRu\js\themes\default\messager.css" />
+    <Content Include="DaoRu\js\themes\default\pagination.css" />
+    <Content Include="DaoRu\js\themes\default\panel.css" />
+    <Content Include="DaoRu\js\themes\default\spinner.css" />
+    <Content Include="DaoRu\js\themes\default\splitbutton.css" />
+    <Content Include="DaoRu\js\themes\default\tabs.css" />
+    <Content Include="DaoRu\js\themes\default\tree.css" />
+    <Content Include="DaoRu\js\themes\default\validatebox.css" />
+    <Content Include="DaoRu\js\themes\default\window.css" />
+    <Content Include="DaoRu\js\themes\gray\accordion.css" />
+    <Content Include="DaoRu\js\themes\gray\calendar.css" />
+    <Content Include="DaoRu\js\themes\gray\combo.css" />
+    <Content Include="DaoRu\js\themes\gray\combobox.css" />
+    <Content Include="DaoRu\js\themes\gray\datagrid.css" />
+    <Content Include="DaoRu\js\themes\gray\datebox.css" />
+    <Content Include="DaoRu\js\themes\gray\dialog.css" />
+    <Content Include="DaoRu\js\themes\gray\easyui.css" />
+    <Content Include="DaoRu\js\themes\gray\images\accordion_collapse.png" />
+    <Content Include="DaoRu\js\themes\gray\images\accordion_expand.png" />
+    <Content Include="DaoRu\js\themes\gray\images\button_a_bg.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\button_plain_hover.png" />
+    <Content Include="DaoRu\js\themes\gray\images\button_span_bg.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\calendar_nextmonth.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\calendar_nextyear.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\calendar_prevmonth.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\calendar_prevyear.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\combo_arrow.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\datagrid_header_bg.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\datagrid_row_collapse.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\datagrid_row_expand.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\datagrid_sort_asc.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\datagrid_sort_desc.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\datagrid_title_bg.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\datebox_arrow.png" />
+    <Content Include="DaoRu\js\themes\gray\images\layout_button_down.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\layout_button_left.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\layout_button_right.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\layout_button_up.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\menu.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\menu_downarrow.png" />
+    <Content Include="DaoRu\js\themes\gray\images\menu_rightarrow.png" />
+    <Content Include="DaoRu\js\themes\gray\images\menu_sep.png" />
+    <Content Include="DaoRu\js\themes\gray\images\menu_split_downarrow.png" />
+    <Content Include="DaoRu\js\themes\gray\images\messager_error.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\messager_info.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\messager_question.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\messager_warning.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\pagination_first.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\pagination_last.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\pagination_load.png" />
+    <Content Include="DaoRu\js\themes\gray\images\pagination_loading.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\pagination_next.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\pagination_prev.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\panel_loading.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\panel_title.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\panel_tools.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\panel_tool_collapse.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\panel_tool_expand.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\spinner_arrow_down.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\spinner_arrow_up.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\tabs_close.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\tabs_enabled.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\tabs_leftarrow.png" />
+    <Content Include="DaoRu\js\themes\gray\images\tabs_rightarrow.png" />
+    <Content Include="DaoRu\js\themes\gray\images\tree_arrows.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\tree_checkbox_0.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\tree_checkbox_1.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\tree_checkbox_2.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\tree_dnd_no.png" />
+    <Content Include="DaoRu\js\themes\gray\images\tree_dnd_yes.png" />
+    <Content Include="DaoRu\js\themes\gray\images\tree_file.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\tree_folder.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\tree_folder_open.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\tree_loading.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\validatebox_pointer.gif" />
+    <Content Include="DaoRu\js\themes\gray\images\validatebox_warning.png" />
+    <Content Include="DaoRu\js\themes\gray\layout.css" />
+    <Content Include="DaoRu\js\themes\gray\linkbutton.css" />
+    <Content Include="DaoRu\js\themes\gray\menu.css" />
+    <Content Include="DaoRu\js\themes\gray\menubutton.css" />
+    <Content Include="DaoRu\js\themes\gray\messager.css" />
+    <Content Include="DaoRu\js\themes\gray\pagination.css" />
+    <Content Include="DaoRu\js\themes\gray\panel.css" />
+    <Content Include="DaoRu\js\themes\gray\spinner.css" />
+    <Content Include="DaoRu\js\themes\gray\splitbutton.css" />
+    <Content Include="DaoRu\js\themes\gray\tabs.css" />
+    <Content Include="DaoRu\js\themes\gray\tree.css" />
+    <Content Include="DaoRu\js\themes\gray\validatebox.css" />
+    <Content Include="DaoRu\js\themes\gray\window.css" />
+    <Content Include="DaoRu\js\themes\icon.css" />
+    <Content Include="DaoRu\js\themes\icons\back.png" />
+    <Content Include="DaoRu\js\themes\icons\cancel.png" />
+    <Content Include="DaoRu\js\themes\icons\cut.png" />
+    <Content Include="DaoRu\js\themes\icons\edit_add.png" />
+    <Content Include="DaoRu\js\themes\icons\edit_remove.png" />
+    <Content Include="DaoRu\js\themes\icons\filesave.png" />
+    <Content Include="DaoRu\js\themes\icons\group.png" />
+    <Content Include="DaoRu\js\themes\icons\help.png" />
+    <Content Include="DaoRu\js\themes\icons\no.png" />
+    <Content Include="DaoRu\js\themes\icons\ok.png" />
+    <Content Include="DaoRu\js\themes\icons\pencil.png" />
+    <Content Include="DaoRu\js\themes\icons\print.png" />
+    <Content Include="DaoRu\js\themes\icons\redo.png" />
+    <Content Include="DaoRu\js\themes\icons\reload.png" />
+    <Content Include="DaoRu\js\themes\icons\search.png" />
+    <Content Include="DaoRu\js\themes\icons\undo.png" />
+    <Content Include="DaoRu\main.aspx" />
+    <Content Include="Error.aspx" />
+    <Content Include="Excel\Bin\Aspose.Cells.dll" />
+    <Content Include="Excel\Bin\Interop.Excel.dll" />
+    <Content Include="Ext\css\basic-dialog.css" />
+    <Content Include="Ext\css\box.css" />
+    <Content Include="Ext\css\button.css" />
+    <Content Include="Ext\css\combo.css" />
+    <Content Include="Ext\css\core.css" />
+    <Content Include="Ext\css\date-picker.css" />
+    <Content Include="Ext\css\dd.css" />
+    <Content Include="Ext\css\debug.css" />
+    <Content Include="Ext\css\editor.css" />
+    <Content Include="Ext\css\ext-all.css" />
+    <Content Include="Ext\css\form.css" />
+    <Content Include="Ext\css\grid.css" />
+    <Content Include="Ext\css\layout.css" />
+    <Content Include="Ext\css\menu.css" />
+    <Content Include="Ext\css\post.css" />
+    <Content Include="Ext\css\qtips.css" />
+    <Content Include="Ext\css\README.txt" />
+    <Content Include="Ext\css\reset-min.css" />
+    <Content Include="Ext\css\resizable.css" />
+    <Content Include="Ext\css\tabs.css" />
+    <Content Include="Ext\css\toolbar.css" />
+    <Content Include="Ext\css\tree.css" />
+    <Content Include="Ext\css\xtheme-aero.css" />
+    <Content Include="Ext\css\xtheme-gray.css" />
+    <Content Include="Ext\css\xtheme-vista.css" />
+    <Content Include="Ext\ext-all-debug.js" />
+    <Content Include="Ext\ext-all.js" />
+    <Content Include="Ext\ext-base.js" />
+    <Content Include="Ext\ext-core-debug.js" />
+    <Content Include="Ext\ext-core.js" />
+    <Content Include="Ext\index.htm" />
+    <Content Include="Ext\jquery-1.4.4.min.js" />
+    <Content Include="Ext\jquery.easyui.min.js" />
+    <Content Include="Ext\resources\css\basic-dialog.css" />
+    <Content Include="Ext\resources\css\box.css" />
+    <Content Include="Ext\resources\css\button.css" />
+    <Content Include="Ext\resources\css\combo.css" />
+    <Content Include="Ext\resources\css\core.css" />
+    <Content Include="Ext\resources\css\date-picker.css" />
+    <Content Include="Ext\resources\css\dd.css" />
+    <Content Include="Ext\resources\css\debug.css" />
+    <Content Include="Ext\resources\css\editor.css" />
+    <Content Include="Ext\resources\css\ext-all.css" />
+    <Content Include="Ext\resources\css\form.css" />
+    <Content Include="Ext\resources\css\grid.css" />
+    <Content Include="Ext\resources\css\layout.css" />
+    <Content Include="Ext\resources\css\menu.css" />
+    <Content Include="Ext\resources\css\qtips.css" />
+    <Content Include="Ext\resources\css\README.txt" />
+    <Content Include="Ext\resources\css\reset-min.css" />
+    <Content Include="Ext\resources\css\resizable.css" />
+    <Content Include="Ext\resources\css\tabs.css" />
+    <Content Include="Ext\resources\css\toolbar.css" />
+    <Content Include="Ext\resources\css\tree.css" />
+    <Content Include="Ext\resources\css\xtheme-aero.css" />
+    <Content Include="Ext\resources\css\xtheme-gray.css" />
+    <Content Include="Ext\resources\css\xtheme-vista.css" />
+    <Content Include="Ext\resources\images\aero\basic-dialog\aero-close-over.gif" />
+    <Content Include="Ext\resources\images\aero\basic-dialog\aero-close.gif" />
+    <Content Include="Ext\resources\images\aero\basic-dialog\bg-center.gif" />
+    <Content Include="Ext\resources\images\aero\basic-dialog\bg-left.gif" />
+    <Content Include="Ext\resources\images\aero\basic-dialog\bg-right.gif" />
+    <Content Include="Ext\resources\images\aero\basic-dialog\close.gif" />
+    <Content Include="Ext\resources\images\aero\basic-dialog\collapse-over.gif" />
+    <Content Include="Ext\resources\images\aero\basic-dialog\collapse.gif" />
+    <Content Include="Ext\resources\images\aero\basic-dialog\e-handle.gif" />
+    <Content Include="Ext\resources\images\aero\basic-dialog\expand-over.gif" />
+    <Content Include="Ext\resources\images\aero\basic-dialog\expand.gif" />
+    <Content Include="Ext\resources\images\aero\basic-dialog\hd-sprite.gif" />
+    <Content Include="Ext\resources\images\aero\basic-dialog\s-handle.gif" />
+    <Content Include="Ext\resources\images\aero\basic-dialog\se-handle.gif" />
+    <Content Include="Ext\resources\images\aero\basic-dialog\w-handle.gif" />
+    <Content Include="Ext\resources\images\aero\gradient-bg.gif" />
+    <Content Include="Ext\resources\images\aero\grid\grid-blue-split.gif" />
+    <Content Include="Ext\resources\images\aero\grid\grid-hrow.gif" />
+    <Content Include="Ext\resources\images\aero\grid\grid-split.gif" />
+    <Content Include="Ext\resources\images\aero\grid\grid-vista-hd.gif" />
+    <Content Include="Ext\resources\images\aero\grid\sort-col-bg.gif" />
+    <Content Include="Ext\resources\images\aero\grid\sort_asc.gif" />
+    <Content Include="Ext\resources\images\aero\grid\sort_desc.gif" />
+    <Content Include="Ext\resources\images\aero\layout\collapse.gif" />
+    <Content Include="Ext\resources\images\aero\layout\expand.gif" />
+    <Content Include="Ext\resources\images\aero\layout\gradient-bg.gif" />
+    <Content Include="Ext\resources\images\aero\layout\ns-collapse.gif" />
+    <Content Include="Ext\resources\images\aero\layout\ns-expand.gif" />
+    <Content Include="Ext\resources\images\aero\layout\panel-close.gif" />
+    <Content Include="Ext\resources\images\aero\layout\panel-title-bg.gif" />
+    <Content Include="Ext\resources\images\aero\layout\panel-title-light-bg.gif" />
+    <Content Include="Ext\resources\images\aero\layout\tab-close-on.gif" />
+    <Content Include="Ext\resources\images\aero\layout\tab-close.gif" />
+    <Content Include="Ext\resources\images\aero\menu\checked.gif" />
+    <Content Include="Ext\resources\images\aero\menu\item-over.gif" />
+    <Content Include="Ext\resources\images\aero\menu\menu.gif" />
+    <Content Include="Ext\resources\images\aero\menu\unchecked.gif" />
+    <Content Include="Ext\resources\images\aero\qtip\bg.gif" />
+    <Content Include="Ext\resources\images\aero\s.gif" />
+    <Content Include="Ext\resources\images\aero\sizer\e-handle-dark.gif" />
+    <Content Include="Ext\resources\images\aero\sizer\e-handle.gif" />
+    <Content Include="Ext\resources\images\aero\sizer\ne-handle-dark.gif" />
+    <Content Include="Ext\resources\images\aero\sizer\ne-handle.gif" />
+    <Content Include="Ext\resources\images\aero\sizer\nw-handle-dark.gif" />
+    <Content Include="Ext\resources\images\aero\sizer\nw-handle.gif" />
+    <Content Include="Ext\resources\images\aero\sizer\s-handle-dark.gif" />
+    <Content Include="Ext\resources\images\aero\sizer\s-handle.gif" />
+    <Content Include="Ext\resources\images\aero\sizer\se-handle-dark.gif" />
+    <Content Include="Ext\resources\images\aero\sizer\se-handle.gif" />
+    <Content Include="Ext\resources\images\aero\sizer\sw-handle-dark.gif" />
+    <Content Include="Ext\resources\images\aero\sizer\sw-handle.gif" />
+    <Content Include="Ext\resources\images\aero\tabs\tab-btm-inactive-left-bg.gif" />
+    <Content Include="Ext\resources\images\aero\tabs\tab-btm-inactive-right-bg.gif" />
+    <Content Include="Ext\resources\images\aero\tabs\tab-btm-left-bg.gif" />
+    <Content Include="Ext\resources\images\aero\tabs\tab-btm-right-bg.gif" />
+    <Content Include="Ext\resources\images\aero\tabs\tab-sprite.gif" />
+    <Content Include="Ext\resources\images\aero\tabs\tab-strip-bg.gif" />
+    <Content Include="Ext\resources\images\aero\tabs\tab-strip-bg.png" />
+    <Content Include="Ext\resources\images\aero\tabs\tab-strip-btm-bg.gif" />
+    <Content Include="Ext\resources\images\aero\toolbar\bg.gif" />
+    <Content Include="Ext\resources\images\aero\toolbar\tb-btn-sprite.gif" />
+    <Content Include="Ext\resources\images\default\basic-dialog\btn-arrow.gif" />
+    <Content Include="Ext\resources\images\default\basic-dialog\btn-sprite.gif" />
+    <Content Include="Ext\resources\images\default\basic-dialog\close.gif" />
+    <Content Include="Ext\resources\images\default\basic-dialog\collapse.gif" />
+    <Content Include="Ext\resources\images\default\basic-dialog\e-handle.gif" />
+    <Content Include="Ext\resources\images\default\basic-dialog\expand.gif" />
+    <Content Include="Ext\resources\images\default\basic-dialog\hd-sprite.gif" />
+    <Content Include="Ext\resources\images\default\basic-dialog\progress.gif" />
+    <Content Include="Ext\resources\images\default\basic-dialog\progress2.gif" />
+    <Content Include="Ext\resources\images\default\basic-dialog\s-handle.gif" />
+    <Content Include="Ext\resources\images\default\basic-dialog\se-handle.gif" />
+    <Content Include="Ext\resources\images\default\box\corners-blue.gif" />
+    <Content Include="Ext\resources\images\default\box\corners.gif" />
+    <Content Include="Ext\resources\images\default\box\l-blue.gif" />
+    <Content Include="Ext\resources\images\default\box\l.gif" />
+    <Content Include="Ext\resources\images\default\box\r-blue.gif" />
+    <Content Include="Ext\resources\images\default\box\r.gif" />
+    <Content Include="Ext\resources\images\default\box\tb-blue.gif" />
+    <Content Include="Ext\resources\images\default\box\tb.gif" />
+    <Content Include="Ext\resources\images\default\dd\drop-add.gif" />
+    <Content Include="Ext\resources\images\default\dd\drop-no.gif" />
+    <Content Include="Ext\resources\images\default\dd\drop-yes.gif" />
+    <Content Include="Ext\resources\images\default\editor\tb-sprite.gif" />
+    <Content Include="Ext\resources\images\default\form\clear-trigger.gif" />
+    <Content Include="Ext\resources\images\default\form\date-trigger.gif" />
+    <Content Include="Ext\resources\images\default\form\error-tip-corners.gif" />
+    <Content Include="Ext\resources\images\default\form\exclamation.gif" />
+    <Content Include="Ext\resources\images\default\form\search-trigger.gif" />
+    <Content Include="Ext\resources\images\default\form\text-bg.gif" />
+    <Content Include="Ext\resources\images\default\form\trigger-tpl.gif" />
+    <Content Include="Ext\resources\images\default\form\trigger.gif" />
+    <Content Include="Ext\resources\images\default\gradient-bg.gif" />
+    <Content Include="Ext\resources\images\default\grid\arrow-left-white.gif" />
+    <Content Include="Ext\resources\images\default\grid\arrow-right-white.gif" />
+    <Content Include="Ext\resources\images\default\grid\col-move-bottom.gif" />
+    <Content Include="Ext\resources\images\default\grid\col-move-top.gif" />
+    <Content Include="Ext\resources\images\default\grid\dirty.gif" />
+    <Content Include="Ext\resources\images\default\grid\done.gif" />
+    <Content Include="Ext\resources\images\default\grid\drop-no.gif" />
+    <Content Include="Ext\resources\images\default\grid\drop-yes.gif" />
+    <Content Include="Ext\resources\images\default\grid\footer-bg.gif" />
+    <Content Include="Ext\resources\images\default\grid\grid-blue-hd.gif" />
+    <Content Include="Ext\resources\images\default\grid\grid-blue-split.gif" />
+    <Content Include="Ext\resources\images\default\grid\grid-hrow.gif" />
+    <Content Include="Ext\resources\images\default\grid\grid-loading.gif" />
+    <Content Include="Ext\resources\images\default\grid\grid-split.gif" />
+    <Content Include="Ext\resources\images\default\grid\grid-vista-hd.gif" />
+    <Content Include="Ext\resources\images\default\grid\grid3-hd-btn.gif" />
+    <Content Include="Ext\resources\images\default\grid\grid3-hrow-over.gif" />
+    <Content Include="Ext\resources\images\default\grid\grid3-hrow.gif" />
+    <Content Include="Ext\resources\images\default\grid\grid3-special-col-bg.gif" />
+    <Content Include="Ext\resources\images\default\grid\grid3-special-col-sel-bg.gif" />
+    <Content Include="Ext\resources\images\default\grid\hd-pop.gif" />
+    <Content Include="Ext\resources\images\default\grid\hmenu-asc.gif" />
+    <Content Include="Ext\resources\images\default\grid\hmenu-desc.gif" />
+    <Content Include="Ext\resources\images\default\grid\hmenu-lock.gif" />
+    <Content Include="Ext\resources\images\default\grid\hmenu-lock.png" />
+    <Content Include="Ext\resources\images\default\grid\hmenu-unlock.gif" />
+    <Content Include="Ext\resources\images\default\grid\hmenu-unlock.png" />
+    <Content Include="Ext\resources\images\default\grid\invalid_line.gif" />
+    <Content Include="Ext\resources\images\default\grid\loading.gif" />
+    <Content Include="Ext\resources\images\default\grid\mso-hd.gif" />
+    <Content Include="Ext\resources\images\default\grid\nowait.gif" />
+    <Content Include="Ext\resources\images\default\grid\page-first-disabled.gif" />
+    <Content Include="Ext\resources\images\default\grid\page-first.gif" />
+    <Content Include="Ext\resources\images\default\grid\page-last-disabled.gif" />
+    <Content Include="Ext\resources\images\default\grid\page-last.gif" />
+    <Content Include="Ext\resources\images\default\grid\page-next-disabled.gif" />
+    <Content Include="Ext\resources\images\default\grid\page-next.gif" />
+    <Content Include="Ext\resources\images\default\grid\page-prev-disabled.gif" />
+    <Content Include="Ext\resources\images\default\grid\page-prev.gif" />
+    <Content Include="Ext\resources\images\default\grid\pick-button.gif" />
+    <Content Include="Ext\resources\images\default\grid\refresh.gif" />
+    <Content Include="Ext\resources\images\default\grid\row-check-sprite.gif" />
+    <Content Include="Ext\resources\images\default\grid\row-expand-sprite.gif" />
+    <Content Include="Ext\resources\images\default\grid\row-over.gif" />
+    <Content Include="Ext\resources\images\default\grid\row-sel.gif" />
+    <Content Include="Ext\resources\images\default\grid\sort_asc.gif" />
+    <Content Include="Ext\resources\images\default\grid\sort_desc.gif" />
+    <Content Include="Ext\resources\images\default\grid\wait.gif" />
+    <Content Include="Ext\resources\images\default\layout\collapse.gif" />
+    <Content Include="Ext\resources\images\default\layout\expand.gif" />
+    <Content Include="Ext\resources\images\default\layout\gradient-bg.gif" />
+    <Content Include="Ext\resources\images\default\layout\ns-collapse.gif" />
+    <Content Include="Ext\resources\images\default\layout\ns-expand.gif" />
+    <Content Include="Ext\resources\images\default\layout\panel-close.gif" />
+    <Content Include="Ext\resources\images\default\layout\panel-title-bg.gif" />
+    <Content Include="Ext\resources\images\default\layout\panel-title-light-bg.gif" />
+    <Content Include="Ext\resources\images\default\layout\stick.gif" />
+    <Content Include="Ext\resources\images\default\layout\stuck.gif" />
+    <Content Include="Ext\resources\images\default\layout\tab-close-on.gif" />
+    <Content Include="Ext\resources\images\default\layout\tab-close.gif" />
+    <Content Include="Ext\resources\images\default\menu\checked.gif" />
+    <Content Include="Ext\resources\images\default\menu\group-checked.gif" />
+    <Content Include="Ext\resources\images\default\menu\menu-parent.gif" />
+    <Content Include="Ext\resources\images\default\menu\menu.gif" />
+    <Content Include="Ext\resources\images\default\menu\unchecked.gif" />
+    <Content Include="Ext\resources\images\default\panel\tool-sprites.gif" />
+    <Content Include="Ext\resources\images\default\qtip\bg.gif" />
+    <Content Include="Ext\resources\images\default\qtip\close.gif" />
+    <Content Include="Ext\resources\images\default\qtip\tip-sprite.gif" />
+    <Content Include="Ext\resources\images\default\s.gif" />
+    <Content Include="Ext\resources\images\default\shadow-c.png" />
+    <Content Include="Ext\resources\images\default\shadow-lr.png" />
+    <Content Include="Ext\resources\images\default\shadow.png" />
+    <Content Include="Ext\resources\images\default\shared\calendar.gif" />
+    <Content Include="Ext\resources\images\default\shared\glass-bg.gif" />
+    <Content Include="Ext\resources\images\default\shared\left-btn.gif" />
+    <Content Include="Ext\resources\images\default\shared\right-btn.gif" />
+    <Content Include="Ext\resources\images\default\shared\warning.gif" />
+    <Content Include="Ext\resources\images\default\sizer\e-handle-dark.gif" />
+    <Content Include="Ext\resources\images\default\sizer\e-handle.gif" />
+    <Content Include="Ext\resources\images\default\sizer\ne-handle-dark.gif" />
+    <Content Include="Ext\resources\images\default\sizer\ne-handle.gif" />
+    <Content Include="Ext\resources\images\default\sizer\nw-handle-dark.gif" />
+    <Content Include="Ext\resources\images\default\sizer\nw-handle.gif" />
+    <Content Include="Ext\resources\images\default\sizer\s-handle-dark.gif" />
+    <Content Include="Ext\resources\images\default\sizer\s-handle.gif" />
+    <Content Include="Ext\resources\images\default\sizer\se-handle-dark.gif" />
+    <Content Include="Ext\resources\images\default\sizer\se-handle.gif" />
+    <Content Include="Ext\resources\images\default\sizer\square.gif" />
+    <Content Include="Ext\resources\images\default\sizer\sw-handle-dark.gif" />
+    <Content Include="Ext\resources\images\default\sizer\sw-handle.gif" />
+    <Content Include="Ext\resources\images\default\tabs\tab-btm-inactive-left-bg.gif" />
+    <Content Include="Ext\resources\images\default\tabs\tab-btm-inactive-right-bg.gif" />
+    <Content Include="Ext\resources\images\default\tabs\tab-btm-left-bg.gif" />
+    <Content Include="Ext\resources\images\default\tabs\tab-btm-right-bg.gif" />
+    <Content Include="Ext\resources\images\default\tabs\tab-sprite.gif" />
+    <Content Include="Ext\resources\images\default\toolbar\btn-arrow-light.gif" />
+    <Content Include="Ext\resources\images\default\toolbar\btn-arrow.gif" />
+    <Content Include="Ext\resources\images\default\toolbar\btn-over-bg.gif" />
+    <Content Include="Ext\resources\images\default\toolbar\gray-bg.gif" />
+    <Content Include="Ext\resources\images\default\toolbar\tb-bg.gif" />
+    <Content Include="Ext\resources\images\default\toolbar\tb-btn-sprite.gif" />
+    <Content Include="Ext\resources\images\default\tree\drop-add.gif" />
+    <Content Include="Ext\resources\images\default\tree\drop-between.gif" />
+    <Content Include="Ext\resources\images\default\tree\drop-no.gif" />
+    <Content Include="Ext\resources\images\default\tree\drop-over.gif" />
+    <Content Include="Ext\resources\images\default\tree\drop-under.gif" />
+    <Content Include="Ext\resources\images\default\tree\drop-yes.gif" />
+    <Content Include="Ext\resources\images\default\tree\elbow-end-minus-nl.gif" />
+    <Content Include="Ext\resources\images\default\tree\elbow-end-minus.gif" />
+    <Content Include="Ext\resources\images\default\tree\elbow-end-plus-nl.gif" />
+    <Content Include="Ext\resources\images\default\tree\elbow-end-plus.gif" />
+    <Content Include="Ext\resources\images\default\tree\elbow-end.gif" />
+    <Content Include="Ext\resources\images\default\tree\elbow-line.gif" />
+    <Content Include="Ext\resources\images\default\tree\elbow-minus-nl.gif" />
+    <Content Include="Ext\resources\images\default\tree\elbow-minus.gif" />
+    <Content Include="Ext\resources\images\default\tree\elbow-plus-nl.gif" />
+    <Content Include="Ext\resources\images\default\tree\elbow-plus.gif" />
+    <Content Include="Ext\resources\images\default\tree\elbow.gif" />
+    <Content Include="Ext\resources\images\default\tree\folder-open.gif" />
+    <Content Include="Ext\resources\images\default\tree\folder.gif" />
+    <Content Include="Ext\resources\images\default\tree\leaf.gif" />
+    <Content Include="Ext\resources\images\default\tree\loading.gif" />
+    <Content Include="Ext\resources\images\default\tree\s.gif" />
+    <Content Include="Ext\resources\images\gray\basic-dialog\close.gif" />
+    <Content Include="Ext\resources\images\gray\basic-dialog\collapse.gif" />
+    <Content Include="Ext\resources\images\gray\basic-dialog\dlg-bg.gif" />
+    <Content Include="Ext\resources\images\gray\basic-dialog\e-handle.gif" />
+    <Content Include="Ext\resources\images\gray\basic-dialog\expand.gif" />
+    <Content Include="Ext\resources\images\gray\basic-dialog\hd-sprite.gif" />
+    <Content Include="Ext\resources\images\gray\basic-dialog\s-handle.gif" />
+    <Content Include="Ext\resources\images\gray\basic-dialog\se-handle.gif" />
+    <Content Include="Ext\resources\images\gray\gradient-bg.gif" />
+    <Content Include="Ext\resources\images\gray\grid\grid-hrow.gif" />
+    <Content Include="Ext\resources\images\gray\layout\collapse.gif" />
+    <Content Include="Ext\resources\images\gray\layout\expand.gif" />
+    <Content Include="Ext\resources\images\gray\layout\gradient-bg.gif" />
+    <Content Include="Ext\resources\images\gray\layout\ns-collapse.gif" />
+    <Content Include="Ext\resources\images\gray\layout\ns-expand.gif" />
+    <Content Include="Ext\resources\images\gray\layout\panel-close.gif" />
+    <Content Include="Ext\resources\images\gray\layout\panel-title-bg.gif" />
+    <Content Include="Ext\resources\images\gray\layout\panel-title-light-bg.gif" />
+    <Content Include="Ext\resources\images\gray\layout\stick.gif" />
+    <Content Include="Ext\resources\images\gray\layout\tab-close-on.gif" />
+    <Content Include="Ext\resources\images\gray\layout\tab-close.gif" />
+    <Content Include="Ext\resources\images\gray\menu\checked.gif" />
+    <Content Include="Ext\resources\images\gray\menu\group-checked.gif" />
+    <Content Include="Ext\resources\images\gray\menu\menu-parent.gif" />
+    <Content Include="Ext\resources\images\gray\menu\menu.gif" />
+    <Content Include="Ext\resources\images\gray\menu\unchecked.gif" />
+    <Content Include="Ext\resources\images\gray\qtip\bg.gif" />
+    <Content Include="Ext\resources\images\gray\qtip\tip-sprite.gif" />
+    <Content Include="Ext\resources\images\gray\s.gif" />
+    <Content Include="Ext\resources\images\gray\sizer\e-handle-dark.gif" />
+    <Content Include="Ext\resources\images\gray\sizer\e-handle.gif" />
+    <Content Include="Ext\resources\images\gray\sizer\ne-handle-dark.gif" />
+    <Content Include="Ext\resources\images\gray\sizer\ne-handle.gif" />
+    <Content Include="Ext\resources\images\gray\sizer\nw-handle-dark.gif" />
+    <Content Include="Ext\resources\images\gray\sizer\nw-handle.gif" />
+    <Content Include="Ext\resources\images\gray\sizer\s-handle-dark.gif" />
+    <Content Include="Ext\resources\images\gray\sizer\s-handle.gif" />
+    <Content Include="Ext\resources\images\gray\sizer\se-handle-dark.gif" />
+    <Content Include="Ext\resources\images\gray\sizer\se-handle.gif" />
+    <Content Include="Ext\resources\images\gray\sizer\sw-handle-dark.gif" />
+    <Content Include="Ext\resources\images\gray\sizer\sw-handle.gif" />
+    <Content Include="Ext\resources\images\gray\tabs\tab-btm-inactive-left-bg.gif" />
+    <Content Include="Ext\resources\images\gray\tabs\tab-btm-inactive-right-bg.gif" />
+    <Content Include="Ext\resources\images\gray\tabs\tab-btm-left-bg.gif" />
+    <Content Include="Ext\resources\images\gray\tabs\tab-btm-right-bg.gif" />
+    <Content Include="Ext\resources\images\gray\tabs\tab-sprite.gif" />
+    <Content Include="Ext\resources\images\gray\toolbar\gray-bg.gif" />
+    <Content Include="Ext\resources\images\gray\toolbar\tb-btn-sprite.gif" />
+    <Content Include="Ext\resources\images\vista\basic-dialog\bg-center.gif" />
+    <Content Include="Ext\resources\images\vista\basic-dialog\bg-left.gif" />
+    <Content Include="Ext\resources\images\vista\basic-dialog\bg-right.gif" />
+    <Content Include="Ext\resources\images\vista\basic-dialog\close.gif" />
+    <Content Include="Ext\resources\images\vista\basic-dialog\collapse.gif" />
+    <Content Include="Ext\resources\images\vista\basic-dialog\dlg-bg.gif" />
+    <Content Include="Ext\resources\images\vista\basic-dialog\e-handle.gif" />
+    <Content Include="Ext\resources\images\vista\basic-dialog\expand.gif" />
+    <Content Include="Ext\resources\images\vista\basic-dialog\hd-sprite.gif" />
+    <Content Include="Ext\resources\images\vista\basic-dialog\s-handle.gif" />
+    <Content Include="Ext\resources\images\vista\basic-dialog\se-handle.gif" />
+    <Content Include="Ext\resources\images\vista\basic-dialog\w-handle.gif" />
+    <Content Include="Ext\resources\images\vista\gradient-bg.gif" />
+    <Content Include="Ext\resources\images\vista\grid\grid-split.gif" />
+    <Content Include="Ext\resources\images\vista\grid\grid-vista-hd.gif" />
+    <Content Include="Ext\resources\images\vista\layout\collapse.gif" />
+    <Content Include="Ext\resources\images\vista\layout\expand.gif" />
+    <Content Include="Ext\resources\images\vista\layout\gradient-bg.gif" />
+    <Content Include="Ext\resources\images\vista\layout\ns-collapse.gif" />
+    <Content Include="Ext\resources\images\vista\layout\ns-expand.gif" />
+    <Content Include="Ext\resources\images\vista\layout\panel-close.gif" />
+    <Content Include="Ext\resources\images\vista\layout\panel-title-bg.gif" />
+    <Content Include="Ext\resources\images\vista\layout\panel-title-light-bg.gif" />
+    <Content Include="Ext\resources\images\vista\layout\stick.gif" />
+    <Content Include="Ext\resources\images\vista\layout\tab-close-on.gif" />
+    <Content Include="Ext\resources\images\vista\layout\tab-close.gif" />
+    <Content Include="Ext\resources\images\vista\qtip\bg.gif" />
+    <Content Include="Ext\resources\images\vista\qtip\tip-sprite.gif" />
+    <Content Include="Ext\resources\images\vista\s.gif" />
+    <Content Include="Ext\resources\images\vista\sizer\e-handle-dark.gif" />
+    <Content Include="Ext\resources\images\vista\sizer\e-handle.gif" />
+    <Content Include="Ext\resources\images\vista\sizer\ne-handle-dark.gif" />
+    <Content Include="Ext\resources\images\vista\sizer\ne-handle.gif" />
+    <Content Include="Ext\resources\images\vista\sizer\nw-handle-dark.gif" />
+    <Content Include="Ext\resources\images\vista\sizer\nw-handle.gif" />
+    <Content Include="Ext\resources\images\vista\sizer\s-handle-dark.gif" />
+    <Content Include="Ext\resources\images\vista\sizer\s-handle.gif" />
+    <Content Include="Ext\resources\images\vista\sizer\se-handle-dark.gif" />
+    <Content Include="Ext\resources\images\vista\sizer\se-handle.gif" />
+    <Content Include="Ext\resources\images\vista\sizer\sw-handle-dark.gif" />
+    <Content Include="Ext\resources\images\vista\sizer\sw-handle.gif" />
+    <Content Include="Ext\resources\images\vista\tabs\tab-btm-inactive-left-bg.gif" />
+    <Content Include="Ext\resources\images\vista\tabs\tab-btm-inactive-right-bg.gif" />
+    <Content Include="Ext\resources\images\vista\tabs\tab-btm-left-bg.gif" />
+    <Content Include="Ext\resources\images\vista\tabs\tab-btm-right-bg.gif" />
+    <Content Include="Ext\resources\images\vista\tabs\tab-sprite.gif" />
+    <Content Include="Ext\resources\images\vista\toolbar\gray-bg.gif" />
+    <Content Include="Ext\resources\images\vista\toolbar\tb-btn-sprite.gif" />
+    <Content Include="Ext\resources\license.txt" />
+    <Content Include="Ext\source\adapter\ext-base.js" />
+    <Content Include="Ext\source\adapter\jquery-bridge.js" />
+    <Content Include="Ext\source\adapter\prototype-bridge.js" />
+    <Content Include="Ext\source\adapter\yui-bridge.js" />
+    <Content Include="Ext\source\core\CompositeElement.js" />
+    <Content Include="Ext\source\core\DomHelper.js" />
+    <Content Include="Ext\source\core\DomQuery.js" />
+    <Content Include="Ext\source\core\Element.js" />
+    <Content Include="Ext\source\core\EventManager.js" />
+    <Content Include="Ext\source\core\Ext.js" />
+    <Content Include="Ext\source\core\Fx.js" />
+    <Content Include="Ext\source\core\Template.js" />
+    <Content Include="Ext\source\core\UpdateManager.js" />
+    <Content Include="Ext\source\data\ArrayReader.js" />
+    <Content Include="Ext\source\data\Connection.js" />
+    <Content Include="Ext\source\data\DataField.js" />
+    <Content Include="Ext\source\data\DataProxy.js" />
+    <Content Include="Ext\source\data\DataReader.js" />
+    <Content Include="Ext\source\data\HttpProxy.js" />
+    <Content Include="Ext\source\data\JsonReader.js" />
+    <Content Include="Ext\source\data\JsonStore.js" />
+    <Content Include="Ext\source\data\MemoryProxy.js" />
+    <Content Include="Ext\source\data\Record.js" />
+    <Content Include="Ext\source\data\ScriptTagProxy.js" />
+    <Content Include="Ext\source\data\SimpleStore.js" />
+    <Content Include="Ext\source\data\SortTypes.js" />
+    <Content Include="Ext\source\data\Store.js" />
+    <Content Include="Ext\source\data\Tree.js" />
+    <Content Include="Ext\source\data\XmlReader.js" />
+    <Content Include="Ext\source\dd\DDCore.js" />
+    <Content Include="Ext\source\dd\DragSource.js" />
+    <Content Include="Ext\source\dd\DragZone.js" />
+    <Content Include="Ext\source\dd\DropTarget.js" />
+    <Content Include="Ext\source\dd\DropZone.js" />
+    <Content Include="Ext\source\dd\Registry.js" />
+    <Content Include="Ext\source\dd\ScrollManager.js" />
+    <Content Include="Ext\source\dd\StatusProxy.js" />
+    <Content Include="Ext\source\debug.js" />
+    <Content Include="Ext\source\license.txt" />
+    <Content Include="Ext\source\locale\ext-lang-af.js" />
+    <Content Include="Ext\source\locale\ext-lang-cs.js" />
+    <Content Include="Ext\source\locale\ext-lang-da.js" />
+    <Content Include="Ext\source\locale\ext-lang-de.js" />
+    <Content Include="Ext\source\locale\ext-lang-el_GR.js" />
+    <Content Include="Ext\source\locale\ext-lang-en.js" />
+    <Content Include="Ext\source\locale\ext-lang-fr.js" />
+    <Content Include="Ext\source\locale\ext-lang-fr_CA.js" />
+    <Content Include="Ext\source\locale\ext-lang-gr.js" />
+    <Content Include="Ext\source\locale\ext-lang-hr.js" />
+    <Content Include="Ext\source\locale\ext-lang-hu.js" />
+    <Content Include="Ext\source\locale\ext-lang-it.js" />
+    <Content Include="Ext\source\locale\ext-lang-ja.js" />
+    <Content Include="Ext\source\locale\ext-lang-lv.js" />
+    <Content Include="Ext\source\locale\ext-lang-mk.js" />
+    <Content Include="Ext\source\locale\ext-lang-nl.js" />
+    <Content Include="Ext\source\locale\ext-lang-no.js" />
+    <Content Include="Ext\source\locale\ext-lang-pl.js" />
+    <Content Include="Ext\source\locale\ext-lang-pt_br.js" />
+    <Content Include="Ext\source\locale\ext-lang-ro.js" />
+    <Content Include="Ext\source\locale\ext-lang-ru.js" />
+    <Content Include="Ext\source\locale\ext-lang-sk.js" />
+    <Content Include="Ext\source\locale\ext-lang-sl.js" />
+    <Content Include="Ext\source\locale\ext-lang-sp.js" />
+    <Content Include="Ext\source\locale\ext-lang-sr_RS.js" />
+    <Content Include="Ext\source\locale\ext-lang-sv_se.js" />
+    <Content Include="Ext\source\locale\ext-lang-tr.js" />
+    <Content Include="Ext\source\locale\ext-lang-vn.js" />
+    <Content Include="Ext\source\locale\ext-lang-zh_CN.js" />
+    <Content Include="Ext\source\locale\ext-lang-zh_TW.js" />
+    <Content Include="Ext\source\state\State.js" />
+    <Content Include="Ext\source\util\ClickRepeater.js" />
+    <Content Include="Ext\source\util\CSS.js" />
+    <Content Include="Ext\source\util\Date.js" />
+    <Content Include="Ext\source\util\DelayedTask.js" />
+    <Content Include="Ext\source\util\Format.js" />
+    <Content Include="Ext\source\util\JSON.js" />
+    <Content Include="Ext\source\util\KeyMap.js" />
+    <Content Include="Ext\source\util\KeyNav.js" />
+    <Content Include="Ext\source\util\MasterTemplate.js" />
+    <Content Include="Ext\source\util\MixedCollection.js" />
+    <Content Include="Ext\source\util\Observable.js" />
+    <Content Include="Ext\source\util\TaskMgr.js" />
+    <Content Include="Ext\source\util\TextMetrics.js" />
+    <Content Include="Ext\source\util\XTemplate.js" />
+    <Content Include="Ext\source\widgets\BasicDialog.js" />
+    <Content Include="Ext\source\widgets\BoxComponent.js" />
+    <Content Include="Ext\source\widgets\Button.js" />
+    <Content Include="Ext\source\widgets\ColorPalette.js" />
+    <Content Include="Ext\source\widgets\Component.js" />
+    <Content Include="Ext\source\widgets\DatePicker.js" />
+    <Content Include="Ext\source\widgets\Editor.js" />
+    <Content Include="Ext\source\widgets\form\Action.js" />
+    <Content Include="Ext\source\widgets\form\BasicForm.js" />
+    <Content Include="Ext\source\widgets\form\Checkbox.js" />
+    <Content Include="Ext\source\widgets\form\Combo.js" />
+    <Content Include="Ext\source\widgets\form\DateField.js" />
+    <Content Include="Ext\source\widgets\form\Field.js" />
+    <Content Include="Ext\source\widgets\form\Form.js" />
+    <Content Include="Ext\source\widgets\form\HtmlEditor.js" />
+    <Content Include="Ext\source\widgets\form\Layout.js" />
+    <Content Include="Ext\source\widgets\form\NumberField.js" />
+    <Content Include="Ext\source\widgets\form\Radio.js" />
+    <Content Include="Ext\source\widgets\form\TextArea.js" />
+    <Content Include="Ext\source\widgets\form\TextField.js" />
+    <Content Include="Ext\source\widgets\form\TriggerField.js" />
+    <Content Include="Ext\source\widgets\form\VTypes.js" />
+    <Content Include="Ext\source\widgets\grid\AbstractGridView.js" />
+    <Content Include="Ext\source\widgets\grid\AbstractSelectionModel.js" />
+    <Content Include="Ext\source\widgets\grid\CellSelectionModel.js" />
+    <Content Include="Ext\source\widgets\grid\ColumnDD.js" />
+    <Content Include="Ext\source\widgets\grid\ColumnModel.js" />
+    <Content Include="Ext\source\widgets\grid\ColumnSplitDD.js" />
+    <Content Include="Ext\source\widgets\grid\EditorGrid.js" />
+    <Content Include="Ext\source\widgets\grid\Grid.js" />
+    <Content Include="Ext\source\widgets\grid\GridDD.js" />
+    <Content Include="Ext\source\widgets\grid\GridEditor.js" />
+    <Content Include="Ext\source\widgets\grid\GridView.js" />
+    <Content Include="Ext\source\widgets\grid\PropertyGrid.js" />
+    <Content Include="Ext\source\widgets\grid\RowSelectionModel.js" />
+    <Content Include="Ext\source\widgets\JsonView.js" />
+    <Content Include="Ext\source\widgets\Layer.js" />
+    <Content Include="Ext\source\widgets\layout\BasicLayoutRegion.js" />
+    <Content Include="Ext\source\widgets\layout\BorderLayout.js" />
+    <Content Include="Ext\source\widgets\layout\BorderLayoutRegions.js" />
+    <Content Include="Ext\source\widgets\layout\ContentPanels.js" />
+    <Content Include="Ext\source\widgets\layout\LayoutManager.js" />
+    <Content Include="Ext\source\widgets\layout\LayoutRegion.js" />
+    <Content Include="Ext\source\widgets\layout\LayoutStateManager.js" />
+    <Content Include="Ext\source\widgets\layout\ReaderLayout.js" />
+    <Content Include="Ext\source\widgets\layout\SplitLayoutRegion.js" />
+    <Content Include="Ext\source\widgets\LoadMask.js" />
+    <Content Include="Ext\source\widgets\MenuButton.js" />
+    <Content Include="Ext\source\widgets\menu\Adapter.js" />
+    <Content Include="Ext\source\widgets\menu\BaseItem.js" />
+    <Content Include="Ext\source\widgets\menu\CheckItem.js" />
+    <Content Include="Ext\source\widgets\menu\ColorItem.js" />
+    <Content Include="Ext\source\widgets\menu\ColorMenu.js" />
+    <Content Include="Ext\source\widgets\menu\DateItem.js" />
+    <Content Include="Ext\source\widgets\menu\DateMenu.js" />
+    <Content Include="Ext\source\widgets\menu\Item.js" />
+    <Content Include="Ext\source\widgets\menu\Menu.js" />
+    <Content Include="Ext\source\widgets\menu\MenuMgr.js" />
+    <Content Include="Ext\source\widgets\menu\Separator.js" />
+    <Content Include="Ext\source\widgets\menu\TextItem.js" />
+    <Content Include="Ext\source\widgets\MessageBox.js" />
+    <Content Include="Ext\source\widgets\PagingToolbar.js" />
+    <Content Include="Ext\source\widgets\QuickTips.js" />
+    <Content Include="Ext\source\widgets\Resizable.js" />
+    <Content Include="Ext\source\widgets\Shadow.js" />
+    <Content Include="Ext\source\widgets\SplitBar.js" />
+    <Content Include="Ext\source\widgets\TabPanel.js" />
+    <Content Include="Ext\source\widgets\Toolbar.js" />
+    <Content Include="Ext\source\widgets\tree\AsyncTreeNode.js" />
+    <Content Include="Ext\source\widgets\tree\TreeDragZone.js" />
+    <Content Include="Ext\source\widgets\tree\TreeDropZone.js" />
+    <Content Include="Ext\source\widgets\tree\TreeEditor.js" />
+    <Content Include="Ext\source\widgets\tree\TreeFilter.js" />
+    <Content Include="Ext\source\widgets\tree\TreeLoader.js" />
+    <Content Include="Ext\source\widgets\tree\TreeNode.js" />
+    <Content Include="Ext\source\widgets\tree\TreeNodeUI.js" />
+    <Content Include="Ext\source\widgets\tree\TreePanel.js" />
+    <Content Include="Ext\source\widgets\tree\TreeSelectionModel.js" />
+    <Content Include="Ext\source\widgets\tree\TreeSorter.js" />
+    <Content Include="Ext\source\widgets\View.js" />
+    <Content Include="Ext\source\yui\animation.js" />
+    <Content Include="Ext\source\yui\connection.js" />
+    <Content Include="Ext\source\yui\dom.js" />
+    <Content Include="Ext\source\yui\event.js" />
+    <Content Include="Ext\source\yui\yahoo.js" />
+    <Content Include="Forum\ForumTest.aspx" />
+    <Content Include="Forum\HfUpdate.aspx" />
+    <Content Include="images\accordion_collapse.png" />
+    <Content Include="images\accordion_expand.png" />
+    <Content Include="images\arrow_down.gif" />
+    <Content Include="images\arrow_up.gif" />
+    <Content Include="images\banner.gif" />
+    <Content Include="images\bg\bg.jpg" />
+    <Content Include="images\bg\bgg.jpg" />
+    <Content Include="images\bg\bt.jpg" />
+    <Content Include="images\bg\btt.jpg" />
+    <Content Include="images\bg\personbackgroud.jpg" />
+    <Content Include="images\bootnbg.jpg" />
+    <Content Include="images\buttom-copy-bg.gif" />
+    <Content Include="images\buttom_bgs.gif" />
+    <Content Include="images\buttom_left2.gif" />
+    <Content Include="images\buttom_right2.gif" />
+    <Content Include="images\button_a_bg.gif" />
+    <Content Include="images\button_plain_hover.png" />
+    <Content Include="images\button_span_bg.gif" />
+    <Content Include="images\calendar_nextmonth.gif" />
+    <Content Include="images\calendar_nextyear.gif" />
+    <Content Include="images\calendar_prevmonth.gif" />
+    <Content Include="images\calendar_prevyear.gif" />
+    <Content Include="images\combo_arrow.gif" />
+    <Content Include="images\content-bg.gif" />
+    <Content Include="images\css\content.css" />
+    <Content Include="images\css\main.css" />
+    <Content Include="images\css\style.css" />
+    <Content Include="images\css\update_info.css" />
+    <Content Include="images\datagrid_header_bg.gif" />
+    <Content Include="images\datagrid_row_collapse.gif" />
+    <Content Include="images\datagrid_row_expand.gif" />
+    <Content Include="images\datagrid_sort_asc.gif" />
+    <Content Include="images\datagrid_sort_desc.gif" />
+    <Content Include="images\datagrid_title_bg.gif" />
+    <Content Include="images\Default.css" />
+    <Content Include="images\Forum\Forumlogo.gif" />
+    <Content Include="images\head.jpg" />
+    <Content Include="images\icon-demo.gif" />
+    <Content Include="images\icon-login-seaver.gif" />
+    <Content Include="images\imagesouye\biaoti.jpg" />
+    <Content Include="images\imagesouye\button1.jpg" />
+    <Content Include="images\imagesouye\button2.jpg" />
+    <Content Include="images\imagesouye\button3.jpg" />
+    <Content Include="images\imagesouye\button4.jpg" />
+    <Content Include="images\imagesouye\button5.jpg" />
+    <Content Include="images\imagesouye\button6.jpg" />
+    <Content Include="images\imagesouye\button7.jpg" />
+    <Content Include="images\imagesouye\flash11.swf" />
+    <Content Include="images\imagesouye\line1.jpg" />
+    <Content Include="images\imagesouye\line2.jpg" />
+    <Content Include="images\imagesouye\logon - 副本 %282%29.jpg" />
+    <Content Include="images\imagesouye\logon.jpg" />
+    <Content Include="images\imagesouye\logon1.jpg" />
+    <Content Include="images\imagesouye\logonbg.gif" />
+    <Content Include="images\imagesouye\lonin.jpg" />
+    <Content Include="images\image\000.jpg" />
+    <Content Include="images\image\0001.jpg" />
+    <Content Include="images\image\age.jpg" />
+    <Content Include="images\image\cid.jpg" />
+    <Content Include="images\image\date.jpg" />
+    <Content Include="images\image\Default.css" />
+    <Content Include="images\image\dzjz.jpg" />
+    <Content Include="images\image\ERROR.jpg" />
+    <Content Include="images\image\gonghao.jpg" />
+    <Content Include="images\image\jb.jpg" />
+    <Content Include="images\image\menu_put.gif" />
+    <Content Include="images\image\mid_mid_mid.gif" />
+    <Content Include="images\image\mid_mid_mid_left.gif" />
+    <Content Include="images\image\photo.gif" />
+    <Content Include="images\image\rzsj.jpg" />
+    <Content Include="images\image\text.jpg" />
+    <Content Include="images\image\text_.jpg" />
+    <Content Include="images\image\title.jpg" />
+    <Content Include="images\image\title_.jpg" />
+    <Content Include="images\image\user_all_bg.gif" />
+    <Content Include="images\image\user_bottom_c.gif" />
+    <Content Include="images\image\user_bottom_l.gif" />
+    <Content Include="images\image\user_bottom_r.gif" />
+    <Content Include="images\image\user_botton.gif" />
+    <Content Include="images\image\User_Login.css" />
+    <Content Include="images\image\user_login_name.gif" />
+    <Content Include="images\image\user_login_password.gif" />
+    <Content Include="images\image\user_login_validatecode.gif" />
+    <Content Include="images\image\user_main_c.gif" />
+    <Content Include="images\image\user_main_l.gif" />
+    <Content Include="images\image\user_main_r.gif" />
+    <Content Include="images\image\user_top_c.gif" />
+    <Content Include="images\image\user_top_l.gif" />
+    <Content Include="images\image\user_top_r.gif" />
+    <Content Include="images\image\white_mid.gif" />
+    <Content Include="images\image\xb.jpg" />
+    <Content Include="images\image\xibie.jpg" />
+    <Content Include="images\image\xingming.jpg" />
+    <Content Include="images\image\xtree.css" />
+    <Content Include="images\image\xueli.jpg" />
+    <Content Include="images\image\xueyuan.jpg" />
+    <Content Include="images\image\zhiwu.jpg" />
+    <Content Include="images\layout_button_down.gif" />
+    <Content Include="images\layout_button_left.gif" />
+    <Content Include="images\layout_button_right.gif" />
+    <Content Include="images\layout_button_up.gif" />
+    <Content Include="images\left-top-right.gif" />
+    <Content Include="images\login-buttom-bg.gif" />
+    <Content Include="images\login-content-bg.gif" />
+    <Content Include="images\login-top-bg.gif" />
+    <Content Include="images\login-wel.gif" />
+    <Content Include="images\login_bg.jpg" />
+    <Content Include="images\logo.gif" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\logon.jpg" />
+    <Content Include="images\logo\hs.gif" />
+    <Content Include="images\logo\hss.gif" />
+    <Content Include="images\logo\logo.gif" />
+    <Content Include="images\logo\logohs.gif" />
+    <Content Include="images\mail_leftbg.gif" />
+    <Content Include="images\mail_rightbg.gif" />
+    <Content Include="images\menu.gif" />
+    <Content Include="images\menu_bg.gif" />
+    <Content Include="images\menu_bg1.gif" />
+    <Content Include="images\menu_bg2.gif" />
+    <Content Include="images\menu_bgs.gif" />
+    <Content Include="images\menu_bottom.gif" />
+    <Content Include="images\menu_downarrow.png" />
+    <Content Include="images\menu_rightarrow.png" />
+    <Content Include="images\menu_sep.png" />
+    <Content Include="images\menu_split_downarrow.png" />
+    <Content Include="images\menu_topline.gif" />
+    <Content Include="images\messager_error.gif" />
+    <Content Include="images\messager_info.gif" />
+    <Content Include="images\messager_question.gif" />
+    <Content Include="images\messager_warning.gif" />
+    <Content Include="images\msn.gif" />
+    <Content Include="images\nav-right-bg.gif" />
+    <Content Include="images\out.gif" />
+    <Content Include="images\pagination_first.gif" />
+    <Content Include="images\pagination_last.gif" />
+    <Content Include="images\pagination_load.png" />
+    <Content Include="images\pagination_loading.gif" />
+    <Content Include="images\pagination_next.gif" />
+    <Content Include="images\pagination_prev.gif" />
+    <Content Include="images\panel_header_bg.gif" />
+    <Content Include="images\panel_loading.gif" />
+    <Content Include="images\panel_title.gif" />
+    <Content Include="images\panel_tools.gif" />
+    <Content Include="images\panel_tool_collapse.gif" />
+    <Content Include="images\panel_tool_expand.gif" />
+    <Content Include="images\reg3.gif" />
+    <Content Include="images\reg4.gif" />
+    <Content Include="images\search.png" />
+    <Content Include="images\spinner_arrow_down.gif" />
+    <Content Include="images\spinner_arrow_up.gif" />
+    <Content Include="images\tabs_close.gif" />
+    <Content Include="images\tabs_enabled.gif" />
+    <Content Include="images\tabs_leftarrow.png" />
+    <Content Include="images\tabs_rightarrow.png" />
+    <Content Include="images\top-right.gif" />
+    <Content Include="images\top_bt.jpg" />
+    <Content Include="images\tree_arrows.gif" />
+    <Content Include="images\tree_checkbox_0.gif" />
+    <Content Include="images\tree_checkbox_1.gif" />
+    <Content Include="images\tree_checkbox_2.gif" />
+    <Content Include="images\tree_dnd_no.png" />
+    <Content Include="images\tree_dnd_yes.png" />
+    <Content Include="images\tree_file.gif" />
+    <Content Include="images\tree_folder.gif" />
+    <Content Include="images\tree_folder_open.gif" />
+    <Content Include="images\tree_loading.gif" />
+    <Content Include="images\tuichu.gif" />
+    <Content Include="images\user_all_bg.gif" />
+    <Content Include="images\user_bottom_c.gif" />
+    <Content Include="images\user_bottom_l.gif" />
+    <Content Include="images\user_bottom_r.gif" />
+    <Content Include="images\user_botton.gif" />
+    <Content Include="images\User_Login.css" />
+    <Content Include="images\user_login_name.gif" />
+    <Content Include="images\user_login_password.gif" />
+    <Content Include="images\user_login_validatecode.gif" />
+    <Content Include="images\user_main_c.gif" />
+    <Content Include="images\user_main_l.gif" />
+    <Content Include="images\user_main_r.gif" />
+    <Content Include="images\user_top_c.gif" />
+    <Content Include="images\user_top_l.gif" />
+    <Content Include="images\user_top_r.gif" />
+    <Content Include="images\validatebox_pointer.gif" />
+    <Content Include="images\validatebox_warning.png" />
+    <Content Include="images\xiugai.gif" />
+    <Content Include="images\xtree.css" />
+    <Content Include="js\images\bg\personbackgroud.jpg" />
+    <Content Include="js\images\Default.css" />
+    <Content Include="js\images\imagesouye\biaoti.jpg" />
+    <Content Include="js\images\imagesouye\button1.jpg" />
+    <Content Include="js\images\imagesouye\button2.jpg" />
+    <Content Include="js\images\imagesouye\button3.jpg" />
+    <Content Include="js\images\imagesouye\button4.jpg" />
+    <Content Include="js\images\imagesouye\button5.jpg" />
+    <Content Include="js\images\imagesouye\button6.jpg" />
+    <Content Include="js\images\imagesouye\button7.jpg" />
+    <Content Include="js\images\imagesouye\flash11.swf" />
+    <Content Include="js\images\imagesouye\line1.jpg" />
+    <Content Include="js\images\imagesouye\line2.jpg" />
+    <Content Include="js\images\imagesouye\logon.jpg" />
+    <Content Include="js\images\imagesouye\logonbg.gif" />
+    <Content Include="js\images\image\000.jpg" />
+    <Content Include="js\images\image\0001.jpg" />
+    <Content Include="js\images\image\age.jpg" />
+    <Content Include="js\images\image\cid.jpg" />
+    <Content Include="js\images\image\date.jpg" />
+    <Content Include="js\images\image\Default.css" />
+    <Content Include="js\images\image\dzjz.jpg" />
+    <Content Include="js\images\image\gonghao.jpg" />
+    <Content Include="js\images\image\jb.jpg" />
+    <Content Include="js\images\image\menu_put.gif" />
+    <Content Include="js\images\image\mid_mid_mid.gif" />
+    <Content Include="js\images\image\mid_mid_mid_left.gif" />
+    <Content Include="js\images\image\rzsj.jpg" />
+    <Content Include="js\images\image\text_.jpg" />
+    <Content Include="js\images\image\title_.jpg" />
+    <Content Include="js\images\image\user_all_bg.gif" />
+    <Content Include="js\images\image\user_bottom_c.gif" />
+    <Content Include="js\images\image\user_bottom_l.gif" />
+    <Content Include="js\images\image\user_bottom_r.gif" />
+    <Content Include="js\images\image\user_botton.gif" />
+    <Content Include="js\images\image\User_Login.css" />
+    <Content Include="js\images\image\user_login_name.gif" />
+    <Content Include="js\images\image\user_login_password.gif" />
+    <Content Include="js\images\image\user_login_validatecode.gif" />
+    <Content Include="js\images\image\user_main_c.gif" />
+    <Content Include="js\images\image\user_main_l.gif" />
+    <Content Include="js\images\image\user_main_r.gif" />
+    <Content Include="js\images\image\user_top_c.gif" />
+    <Content Include="js\images\image\user_top_l.gif" />
+    <Content Include="js\images\image\user_top_r.gif" />
+    <Content Include="js\images\image\white_mid.gif" />
+    <Content Include="js\images\image\xb.jpg" />
+    <Content Include="js\images\image\xibie.jpg" />
+    <Content Include="js\images\image\xingming.jpg" />
+    <Content Include="js\images\image\xtree.css" />
+    <Content Include="js\images\image\xueli.jpg" />
+    <Content Include="js\images\image\xueyuan.jpg" />
+    <Content Include="js\images\image\zhiwu.jpg" />
+    <Content Include="js\images\reg3.gif" />
+    <Content Include="js\images\reg4.gif" />
+    <Content Include="js\images\user_all_bg.gif" />
+    <Content Include="js\images\user_bottom_c.gif" />
+    <Content Include="js\images\user_bottom_l.gif" />
+    <Content Include="js\images\user_bottom_r.gif" />
+    <Content Include="js\images\user_botton.gif" />
+    <Content Include="js\images\User_Login.css" />
+    <Content Include="js\images\user_login_name.gif" />
+    <Content Include="js\images\user_login_password.gif" />
+    <Content Include="js\images\user_login_validatecode.gif" />
+    <Content Include="js\images\user_main_c.gif" />
+    <Content Include="js\images\user_main_l.gif" />
+    <Content Include="js\images\user_main_r.gif" />
+    <Content Include="js\images\user_top_c.gif" />
+    <Content Include="js\images\user_top_l.gif" />
+    <Content Include="js\images\user_top_r.gif" />
+    <Content Include="js\images\xtree.css" />
+    <Content Include="index.htm" />
+    <Content Include="js\global.js" />
+    <Content Include="js\jquery\ext-jquery-adapter.js" />
+    <Content Include="js\jquery\jquery-1.4.4.min.js" />
+    <Content Include="js\jquery\jquery-plugins.js" />
+    <Content Include="js\jquery\jquery.easyui.min.js" />
+    <Content Include="js\jquery\jquery.js" />
+    <Content Include="js\jquery\ShoppingCart.js" />
+    <Content Include="js\jquery\jss\AddElement.js" />
+    <Content Include="js\jquery\jss\Date.js" />
+    <Content Include="js\jquery\jss\Delinput.js" />
+    <Content Include="js\jquery\jss\easyui-lang-zh_CN.js" />
+    <Content Include="js\jquery\jss\GetValues.js" />
+    <Content Include="js\jquery\jss\jquery-1.4.2-vsdoc.js" />
+    <Content Include="js\jquery\jss\jquery-1.4.2.js" />
+    <Content Include="js\jquery\jss\jquery.easyui.min.js" />
+    <Content Include="js\jquery\jss\MainBuju.js" />
+    <Content Include="js\jquery\jss\Reg.js" />
+    <Content Include="js\jquery\jss\SelectExcel.js" />
+    <Content Include="js\jquery\jss\SelectTask.js" />
+    <Content Include="js\jss\AddElement.js" />
+    <Content Include="js\jss\cookie.js" />
+    <Content Include="js\jss\Date.js" />
+    <Content Include="js\jss\Delinput.js" />
+    <Content Include="js\jss\Forum.js" />
+    <Content Include="js\jss\GetValues.js" />
+    <Content Include="js\jss\MainBuju.js" />
+    <Content Include="js\jss\Reg.js" />
+    <Content Include="js\jss\xpath.js" />
+    <Content Include="js\prototype.js" />
+    <Content Include="js\style.js" />
+    <Content Include="logon.aspx" />
+    <Content Include="Main.aspx" />
+    <Content Include="RoleManager\Role.aspx" />
+    <Content Include="Session.aspx" />
+    <Content Include="Systems\Function.aspx" />
+    <Content Include="Systems\LoadInfo.aspx" />
+    <Content Include="Task\DownLoad.aspx" />
+    <Content Include="Task\EditeTask.aspx" />
+    <Content Include="Task\myTask.aspx" />
+    <Content Include="Task\myTaskYear.aspx" />
+    <Content Include="Task\TaskDesing.aspx" />
+    <Content Include="Task\TaskInfo.aspx" />
+    <Content Include="Task\TaskManager.aspx" />
+    <Content Include="Task\TaskPass.aspx" />
+    <Content Include="Task\ViewTask.aspx" />
+    <Content Include="Data\Handler.ashx" />
+    <Content Include="Data\SchHandler.ashx" />
+    <Content Include="Data\GetSchool.ashx" />
+    <Content Include="Data\GetTask_.ashx" />
+    <Content Include="Data\GetFunction.ashx" />
+    <Content Include="Data\TeaHandler.ashx" />
+    <Content Include="Data\DepHandler.ashx" />
+    <Content Include="Data\GetRole.ashx" />
+    <Content Include="treatise\addTreatiese.aspx" />
+    <Content Include="treatise\addXPath.aspx" />
+    <Content Include="treatise\myTreatise.aspx" />
+    <Content Include="treatise\onePath.aspx" />
+    <Content Include="treatise\oneTreatise.aspx" />
+    <Content Include="treatise\treatiseBar.aspx" />
+    <Content Include="treatise\TreatiseStatistics.aspx" />
+    <Content Include="treatise\xpathList.aspx" />
+    <Content Include="USER\Department.aspx" />
+    <Content Include="USER\myinfo.aspx" />
+    <Content Include="USER\School.aspx" />
+    <Content Include="USER\Teacher.aspx" />
+    <Content Include="Data\HandlerCom.ashx" />
+    <Content Include="Data\Forum.ashx" />
+    <Content Include="DaoRu\Data\DataShow.ashx" />
+    <None Include="DaoRu\files\test.xls" />
+    <None Include="DaoRu\files\课程表精简.xls" />
+    <None Include="DaoRu\files\课程表精简表.xls" />
+    <None Include="DaoRu\json\combobox_data.json" />
+    <None Include="DaoRu\json\datagrid_data.json" />
+    <None Include="DaoRu\json\datagrid_data2.json" />
+    <None Include="DaoRu\json\datagrid_data3.json" />
+    <None Include="DaoRu\json\form_data.json" />
+    <None Include="DaoRu\json\treegrid_data.json" />
+    <None Include="DaoRu\json\treegrid_subdata.json" />
+    <None Include="DaoRu\json\tree_data.json" />
+    <None Include="DaoRu\js\demo\combobox_data.json" />
+    <None Include="DaoRu\js\demo\datagrid_data.json" />
+    <None Include="DaoRu\js\demo\datagrid_data2.json" />
+    <None Include="DaoRu\js\demo\datagrid_data3.json" />
+    <None Include="DaoRu\js\demo\form_data.json" />
+    <None Include="DaoRu\js\demo\treegrid_data.json" />
+    <None Include="DaoRu\js\demo\treegrid_subdata.json" />
+    <None Include="DaoRu\js\demo\tree_data.json" />
+    <None Include="DaoRu\js\themes\icon.css.bak" />
+    <None Include="Excel\Bin\celllic.lic" />
+    <None Include="Ext\resources\images\aero\grid\pspbrwse.jbf" />
+    <None Include="Ext\resources\images\default\form\clear-trigger.psd" />
+    <None Include="Ext\resources\images\default\form\date-trigger.psd" />
+    <None Include="Ext\resources\images\default\form\search-trigger.psd" />
+    <None Include="Ext\resources\images\default\form\trigger.psd" />
+    <None Include="Ext\resources\images\default\grid\Thumbs.db" />
+    <None Include="Ext\resources\raw-images\shadow.psd" />
+    <None Include="Ext\resources\resources.jsb" />
+    <None Include="Ext\source\ext.jsb" />
+    <None Include="images\.svn\all-wcprops" />
+    <None Include="images\.svn\entries" />
+    <None Include="images\.svn\prop-base\accordion_collapse.png.svn-base" />
+    <None Include="images\.svn\prop-base\accordion_expand.png.svn-base" />
+    <None Include="images\.svn\prop-base\banner.gif.svn-base" />
+    <None Include="images\.svn\prop-base\bootnbg.jpg.svn-base" />
+    <None Include="images\.svn\prop-base\buttom-copy-bg.gif.svn-base" />
+    <None Include="images\.svn\prop-base\buttom_bgs.gif.svn-base" />
+    <None Include="images\.svn\prop-base\buttom_left2.gif.svn-base" />
+    <None Include="images\.svn\prop-base\buttom_right2.gif.svn-base" />
+    <None Include="images\.svn\prop-base\button_a_bg.gif.svn-base" />
+    <None Include="images\.svn\prop-base\button_plain_hover.png.svn-base" />
+    <None Include="images\.svn\prop-base\button_span_bg.gif.svn-base" />
+    <None Include="images\.svn\prop-base\calendar_nextmonth.gif.svn-base" />
+    <None Include="images\.svn\prop-base\calendar_nextyear.gif.svn-base" />
+    <None Include="images\.svn\prop-base\calendar_prevmonth.gif.svn-base" />
+    <None Include="images\.svn\prop-base\calendar_prevyear.gif.svn-base" />
+    <None Include="images\.svn\prop-base\combo_arrow.gif.svn-base" />
+    <None Include="images\.svn\prop-base\content-bg.gif.svn-base" />
+    <None Include="images\.svn\prop-base\datagrid_header_bg.gif.svn-base" />
+    <None Include="images\.svn\prop-base\datagrid_row_collapse.gif.svn-base" />
+    <None Include="images\.svn\prop-base\datagrid_row_expand.gif.svn-base" />
+    <None Include="images\.svn\prop-base\datagrid_sort_asc.gif.svn-base" />
+    <None Include="images\.svn\prop-base\datagrid_sort_desc.gif.svn-base" />
+    <None Include="images\.svn\prop-base\datagrid_title_bg.gif.svn-base" />
+    <None Include="images\.svn\prop-base\icon-demo.gif.svn-base" />
+    <None Include="images\.svn\prop-base\icon-login-seaver.gif.svn-base" />
+    <None Include="images\.svn\prop-base\layout_button_down.gif.svn-base" />
+    <None Include="images\.svn\prop-base\layout_button_left.gif.svn-base" />
+    <None Include="images\.svn\prop-base\layout_button_right.gif.svn-base" />
+    <None Include="images\.svn\prop-base\layout_button_up.gif.svn-base" />
+    <None Include="images\.svn\prop-base\left-top-right.gif.svn-base" />
+    <None Include="images\.svn\prop-base\login-buttom-bg.gif.svn-base" />
+    <None Include="images\.svn\prop-base\login-content-bg.gif.svn-base" />
+    <None Include="images\.svn\prop-base\login-top-bg.gif.svn-base" />
+    <None Include="images\.svn\prop-base\login-wel.gif.svn-base" />
+    <None Include="images\.svn\prop-base\login_bg.jpg.svn-base" />
+    <None Include="images\.svn\prop-base\logo.gif.svn-base" />
+    <None Include="images\.svn\prop-base\logo.png.svn-base" />
+    <None Include="images\.svn\prop-base\mail_leftbg.gif.svn-base" />
+    <None Include="images\.svn\prop-base\mail_rightbg.gif.svn-base" />
+    <None Include="images\.svn\prop-base\menu.gif.svn-base" />
+    <None Include="images\.svn\prop-base\menu_bg.gif.svn-base" />
+    <None Include="images\.svn\prop-base\menu_bg1.gif.svn-base" />
+    <None Include="images\.svn\prop-base\menu_bg2.gif.svn-base" />
+    <None Include="images\.svn\prop-base\menu_bgs.gif.svn-base" />
+    <None Include="images\.svn\prop-base\menu_bottom.gif.svn-base" />
+    <None Include="images\.svn\prop-base\menu_downarrow.png.svn-base" />
+    <None Include="images\.svn\prop-base\menu_rightarrow.png.svn-base" />
+    <None Include="images\.svn\prop-base\menu_sep.png.svn-base" />
+    <None Include="images\.svn\prop-base\menu_split_downarrow.png.svn-base" />
+    <None Include="images\.svn\prop-base\menu_topline.gif.svn-base" />
+    <None Include="images\.svn\prop-base\messager_error.gif.svn-base" />
+    <None Include="images\.svn\prop-base\messager_info.gif.svn-base" />
+    <None Include="images\.svn\prop-base\messager_question.gif.svn-base" />
+    <None Include="images\.svn\prop-base\messager_warning.gif.svn-base" />
+    <None Include="images\.svn\prop-base\nav-right-bg.gif.svn-base" />
+    <None Include="images\.svn\prop-base\out.gif.svn-base" />
+    <None Include="images\.svn\prop-base\pagination_first.gif.svn-base" />
+    <None Include="images\.svn\prop-base\pagination_last.gif.svn-base" />
+    <None Include="images\.svn\prop-base\pagination_load.png.svn-base" />
+    <None Include="images\.svn\prop-base\pagination_loading.gif.svn-base" />
+    <None Include="images\.svn\prop-base\pagination_next.gif.svn-base" />
+    <None Include="images\.svn\prop-base\pagination_prev.gif.svn-base" />
+    <None Include="images\.svn\prop-base\panel_loading.gif.svn-base" />
+    <None Include="images\.svn\prop-base\panel_title.gif.svn-base" />
+    <None Include="images\.svn\prop-base\panel_tools.gif.svn-base" />
+    <None Include="images\.svn\prop-base\panel_tool_collapse.gif.svn-base" />
+    <None Include="images\.svn\prop-base\panel_tool_expand.gif.svn-base" />
+    <None Include="images\.svn\prop-base\spinner_arrow_down.gif.svn-base" />
+    <None Include="images\.svn\prop-base\spinner_arrow_up.gif.svn-base" />
+    <None Include="images\.svn\prop-base\tabs_close.gif.svn-base" />
+    <None Include="images\.svn\prop-base\tabs_enabled.gif.svn-base" />
+    <None Include="images\.svn\prop-base\tabs_leftarrow.png.svn-base" />
+    <None Include="images\.svn\prop-base\tabs_rightarrow.png.svn-base" />
+    <None Include="images\.svn\prop-base\top-right.gif.svn-base" />
+    <None Include="images\.svn\prop-base\top_bt.jpg.svn-base" />
+    <None Include="images\.svn\prop-base\tree_arrows.gif.svn-base" />
+    <None Include="images\.svn\prop-base\tree_checkbox_0.gif.svn-base" />
+    <None Include="images\.svn\prop-base\tree_checkbox_1.gif.svn-base" />
+    <None Include="images\.svn\prop-base\tree_checkbox_2.gif.svn-base" />
+    <None Include="images\.svn\prop-base\tree_dnd_no.png.svn-base" />
+    <None Include="images\.svn\prop-base\tree_dnd_yes.png.svn-base" />
+    <None Include="images\.svn\prop-base\tree_file.gif.svn-base" />
+    <None Include="images\.svn\prop-base\tree_folder.gif.svn-base" />
+    <None Include="images\.svn\prop-base\tree_folder_open.gif.svn-base" />
+    <None Include="images\.svn\prop-base\tree_loading.gif.svn-base" />
+    <None Include="images\.svn\prop-base\validatebox_pointer.gif.svn-base" />
+    <None Include="images\.svn\prop-base\validatebox_warning.png.svn-base" />
+    <None Include="images\.svn\text-base\accordion_collapse.png.svn-base" />
+    <None Include="images\.svn\text-base\accordion_expand.png.svn-base" />
+    <None Include="images\.svn\text-base\banner.gif.svn-base" />
+    <None Include="images\.svn\text-base\bootnbg.jpg.svn-base" />
+    <None Include="images\.svn\text-base\buttom-copy-bg.gif.svn-base" />
+    <None Include="images\.svn\text-base\buttom_bgs.gif.svn-base" />
+    <None Include="images\.svn\text-base\buttom_left2.gif.svn-base" />
+    <None Include="images\.svn\text-base\buttom_right2.gif.svn-base" />
+    <None Include="images\.svn\text-base\button_a_bg.gif.svn-base" />
+    <None Include="images\.svn\text-base\button_plain_hover.png.svn-base" />
+    <None Include="images\.svn\text-base\button_span_bg.gif.svn-base" />
+    <None Include="images\.svn\text-base\calendar_nextmonth.gif.svn-base" />
+    <None Include="images\.svn\text-base\calendar_nextyear.gif.svn-base" />
+    <None Include="images\.svn\text-base\calendar_prevmonth.gif.svn-base" />
+    <None Include="images\.svn\text-base\calendar_prevyear.gif.svn-base" />
+    <None Include="images\.svn\text-base\combo_arrow.gif.svn-base" />
+    <None Include="images\.svn\text-base\content-bg.gif.svn-base" />
+    <None Include="images\.svn\text-base\datagrid_header_bg.gif.svn-base" />
+    <None Include="images\.svn\text-base\datagrid_row_collapse.gif.svn-base" />
+    <None Include="images\.svn\text-base\datagrid_row_expand.gif.svn-base" />
+    <None Include="images\.svn\text-base\datagrid_sort_asc.gif.svn-base" />
+    <None Include="images\.svn\text-base\datagrid_sort_desc.gif.svn-base" />
+    <None Include="images\.svn\text-base\datagrid_title_bg.gif.svn-base" />
+    <None Include="images\.svn\text-base\icon-demo.gif.svn-base" />
+    <None Include="images\.svn\text-base\icon-login-seaver.gif.svn-base" />
+    <None Include="images\.svn\text-base\layout_button_down.gif.svn-base" />
+    <None Include="images\.svn\text-base\layout_button_left.gif.svn-base" />
+    <None Include="images\.svn\text-base\layout_button_right.gif.svn-base" />
+    <None Include="images\.svn\text-base\layout_button_up.gif.svn-base" />
+    <None Include="images\.svn\text-base\left-top-right.gif.svn-base" />
+    <None Include="images\.svn\text-base\login-buttom-bg.gif.svn-base" />
+    <None Include="images\.svn\text-base\login-content-bg.gif.svn-base" />
+    <None Include="images\.svn\text-base\login-top-bg.gif.svn-base" />
+    <None Include="images\.svn\text-base\login-wel.gif.svn-base" />
+    <None Include="images\.svn\text-base\login_bg.jpg.svn-base" />
+    <None Include="images\.svn\text-base\logo.gif.svn-base" />
+    <None Include="images\.svn\text-base\logo.png.svn-base" />
+    <None Include="images\.svn\text-base\mail_leftbg.gif.svn-base" />
+    <None Include="images\.svn\text-base\mail_rightbg.gif.svn-base" />
+    <None Include="images\.svn\text-base\menu.gif.svn-base" />
+    <None Include="images\.svn\text-base\menu_bg.gif.svn-base" />
+    <None Include="images\.svn\text-base\menu_bg1.gif.svn-base" />
+    <None Include="images\.svn\text-base\menu_bg2.gif.svn-base" />
+    <None Include="images\.svn\text-base\menu_bgs.gif.svn-base" />
+    <None Include="images\.svn\text-base\menu_bottom.gif.svn-base" />
+    <None Include="images\.svn\text-base\menu_downarrow.png.svn-base" />
+    <None Include="images\.svn\text-base\menu_rightarrow.png.svn-base" />
+    <None Include="images\.svn\text-base\menu_sep.png.svn-base" />
+    <None Include="images\.svn\text-base\menu_split_downarrow.png.svn-base" />
+    <None Include="images\.svn\text-base\menu_topline.gif.svn-base" />
+    <None Include="images\.svn\text-base\messager_error.gif.svn-base" />
+    <None Include="images\.svn\text-base\messager_info.gif.svn-base" />
+    <None Include="images\.svn\text-base\messager_question.gif.svn-base" />
+    <None Include="images\.svn\text-base\messager_warning.gif.svn-base" />
+    <None Include="images\.svn\text-base\nav-right-bg.gif.svn-base" />
+    <None Include="images\.svn\text-base\out.gif.svn-base" />
+    <None Include="images\.svn\text-base\pagination_first.gif.svn-base" />
+    <None Include="images\.svn\text-base\pagination_last.gif.svn-base" />
+    <None Include="images\.svn\text-base\pagination_load.png.svn-base" />
+    <None Include="images\.svn\text-base\pagination_loading.gif.svn-base" />
+    <None Include="images\.svn\text-base\pagination_next.gif.svn-base" />
+    <None Include="images\.svn\text-base\pagination_prev.gif.svn-base" />
+    <None Include="images\.svn\text-base\panel_loading.gif.svn-base" />
+    <None Include="images\.svn\text-base\panel_title.gif.svn-base" />
+    <None Include="images\.svn\text-base\panel_tools.gif.svn-base" />
+    <None Include="images\.svn\text-base\panel_tool_collapse.gif.svn-base" />
+    <None Include="images\.svn\text-base\panel_tool_expand.gif.svn-base" />
+    <None Include="images\.svn\text-base\spinner_arrow_down.gif.svn-base" />
+    <None Include="images\.svn\text-base\spinner_arrow_up.gif.svn-base" />
+    <None Include="images\.svn\text-base\tabs_close.gif.svn-base" />
+    <None Include="images\.svn\text-base\tabs_enabled.gif.svn-base" />
+    <None Include="images\.svn\text-base\tabs_leftarrow.png.svn-base" />
+    <None Include="images\.svn\text-base\tabs_rightarrow.png.svn-base" />
+    <None Include="images\.svn\text-base\top-right.gif.svn-base" />
+    <None Include="images\.svn\text-base\top_bt.jpg.svn-base" />
+    <None Include="images\.svn\text-base\tree_arrows.gif.svn-base" />
+    <None Include="images\.svn\text-base\tree_checkbox_0.gif.svn-base" />
+    <None Include="images\.svn\text-base\tree_checkbox_1.gif.svn-base" />
+    <None Include="images\.svn\text-base\tree_checkbox_2.gif.svn-base" />
+    <None Include="images\.svn\text-base\tree_dnd_no.png.svn-base" />
+    <None Include="images\.svn\text-base\tree_dnd_yes.png.svn-base" />
+    <None Include="images\.svn\text-base\tree_file.gif.svn-base" />
+    <None Include="images\.svn\text-base\tree_folder.gif.svn-base" />
+    <None Include="images\.svn\text-base\tree_folder_open.gif.svn-base" />
+    <None Include="images\.svn\text-base\tree_loading.gif.svn-base" />
+    <None Include="images\.svn\text-base\validatebox_pointer.gif.svn-base" />
+    <None Include="images\.svn\text-base\validatebox_warning.png.svn-base" />
+    <None Include="images\css\.svn\all-wcprops" />
+    <None Include="images\css\.svn\entries" />
+    <None Include="images\css\.svn\text-base\content.css.svn-base" />
+    <None Include="images\css\.svn\text-base\login.css.svn-base" />
+    <None Include="images\css\.svn\text-base\main.css.svn-base" />
+    <None Include="images\css\.svn\tmp\main.css.tmp" />
+    <None Include="images\logo\logo.psd" />
+    <None Include="js\images\.svn\all-wcprops" />
+    <None Include="js\images\.svn\entries" />
+    <None Include="js\images\.svn\prop-base\accordion_collapse.png.svn-base" />
+    <None Include="js\images\.svn\prop-base\accordion_expand.png.svn-base" />
+    <None Include="js\images\.svn\prop-base\banner.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\bootnbg.jpg.svn-base" />
+    <None Include="js\images\.svn\prop-base\buttom-copy-bg.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\buttom_bgs.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\buttom_left2.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\buttom_right2.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\button_a_bg.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\button_plain_hover.png.svn-base" />
+    <None Include="js\images\.svn\prop-base\button_span_bg.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\calendar_nextmonth.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\calendar_nextyear.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\calendar_prevmonth.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\calendar_prevyear.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\combo_arrow.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\content-bg.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\datagrid_header_bg.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\datagrid_row_collapse.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\datagrid_row_expand.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\datagrid_sort_asc.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\datagrid_sort_desc.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\datagrid_title_bg.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\icon-demo.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\icon-login-seaver.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\layout_button_down.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\layout_button_left.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\layout_button_right.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\layout_button_up.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\left-top-right.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\login-buttom-bg.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\login-content-bg.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\login-top-bg.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\login-wel.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\login_bg.jpg.svn-base" />
+    <None Include="js\images\.svn\prop-base\logo.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\logo.png.svn-base" />
+    <None Include="js\images\.svn\prop-base\mail_leftbg.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\mail_rightbg.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\menu.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\menu_bg.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\menu_bg1.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\menu_bg2.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\menu_bgs.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\menu_bottom.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\menu_downarrow.png.svn-base" />
+    <None Include="js\images\.svn\prop-base\menu_rightarrow.png.svn-base" />
+    <None Include="js\images\.svn\prop-base\menu_sep.png.svn-base" />
+    <None Include="js\images\.svn\prop-base\menu_split_downarrow.png.svn-base" />
+    <None Include="js\images\.svn\prop-base\menu_topline.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\messager_error.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\messager_info.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\messager_question.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\messager_warning.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\nav-right-bg.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\out.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\pagination_first.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\pagination_last.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\pagination_load.png.svn-base" />
+    <None Include="js\images\.svn\prop-base\pagination_loading.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\pagination_next.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\pagination_prev.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\panel_loading.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\panel_title.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\panel_tools.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\panel_tool_collapse.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\panel_tool_expand.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\spinner_arrow_down.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\spinner_arrow_up.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\tabs_close.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\tabs_enabled.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\tabs_leftarrow.png.svn-base" />
+    <None Include="js\images\.svn\prop-base\tabs_rightarrow.png.svn-base" />
+    <None Include="js\images\.svn\prop-base\top-right.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\top_bt.jpg.svn-base" />
+    <None Include="js\images\.svn\prop-base\tree_arrows.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\tree_checkbox_0.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\tree_checkbox_1.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\tree_checkbox_2.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\tree_dnd_no.png.svn-base" />
+    <None Include="js\images\.svn\prop-base\tree_dnd_yes.png.svn-base" />
+    <None Include="js\images\.svn\prop-base\tree_file.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\tree_folder.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\tree_folder_open.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\tree_loading.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\validatebox_pointer.gif.svn-base" />
+    <None Include="js\images\.svn\prop-base\validatebox_warning.png.svn-base" />
+    <None Include="js\images\.svn\text-base\accordion_collapse.png.svn-base" />
+    <None Include="js\images\.svn\text-base\accordion_expand.png.svn-base" />
+    <None Include="js\images\.svn\text-base\banner.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\bootnbg.jpg.svn-base" />
+    <None Include="js\images\.svn\text-base\buttom-copy-bg.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\buttom_bgs.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\buttom_left2.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\buttom_right2.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\button_a_bg.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\button_plain_hover.png.svn-base" />
+    <None Include="js\images\.svn\text-base\button_span_bg.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\calendar_nextmonth.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\calendar_nextyear.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\calendar_prevmonth.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\calendar_prevyear.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\combo_arrow.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\content-bg.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\datagrid_header_bg.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\datagrid_row_collapse.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\datagrid_row_expand.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\datagrid_sort_asc.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\datagrid_sort_desc.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\datagrid_title_bg.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\icon-demo.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\icon-login-seaver.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\layout_button_down.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\layout_button_left.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\layout_button_right.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\layout_button_up.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\left-top-right.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\login-buttom-bg.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\login-content-bg.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\login-top-bg.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\login-wel.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\login_bg.jpg.svn-base" />
+    <None Include="js\images\.svn\text-base\logo.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\logo.png.svn-base" />
+    <None Include="js\images\.svn\text-base\mail_leftbg.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\mail_rightbg.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\menu.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\menu_bg.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\menu_bg1.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\menu_bg2.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\menu_bgs.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\menu_bottom.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\menu_downarrow.png.svn-base" />
+    <None Include="js\images\.svn\text-base\menu_rightarrow.png.svn-base" />
+    <None Include="js\images\.svn\text-base\menu_sep.png.svn-base" />
+    <None Include="js\images\.svn\text-base\menu_split_downarrow.png.svn-base" />
+    <None Include="js\images\.svn\text-base\menu_topline.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\messager_error.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\messager_info.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\messager_question.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\messager_warning.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\nav-right-bg.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\out.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\pagination_first.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\pagination_last.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\pagination_load.png.svn-base" />
+    <None Include="js\images\.svn\text-base\pagination_loading.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\pagination_next.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\pagination_prev.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\panel_loading.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\panel_title.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\panel_tools.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\panel_tool_collapse.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\panel_tool_expand.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\spinner_arrow_down.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\spinner_arrow_up.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\tabs_close.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\tabs_enabled.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\tabs_leftarrow.png.svn-base" />
+    <None Include="js\images\.svn\text-base\tabs_rightarrow.png.svn-base" />
+    <None Include="js\images\.svn\text-base\top-right.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\top_bt.jpg.svn-base" />
+    <None Include="js\images\.svn\text-base\tree_arrows.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\tree_checkbox_0.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\tree_checkbox_1.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\tree_checkbox_2.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\tree_dnd_no.png.svn-base" />
+    <None Include="js\images\.svn\text-base\tree_dnd_yes.png.svn-base" />
+    <None Include="js\images\.svn\text-base\tree_file.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\tree_folder.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\tree_folder_open.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\tree_loading.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\validatebox_pointer.gif.svn-base" />
+    <None Include="js\images\.svn\text-base\validatebox_warning.png.svn-base" />
+    <None Include="js\.svn\all-wcprops" />
+    <None Include="js\.svn\entries" />
+    <None Include="js\.svn\text-base\easyui-lang-zh_CN.js.svn-base" />
+    <None Include="js\.svn\text-base\jquery.easyui.min.js.svn-base" />
+    <None Include="themes\.svn\all-wcprops" />
+    <None Include="themes\.svn\entries" />
+    <None Include="themes\.svn\text-base\icon.css.svn-base" />
+    <None Include="themes\default\.svn\all-wcprops" />
+    <None Include="themes\default\.svn\entries" />
+    <None Include="themes\default\.svn\text-base\easyui.css.svn-base" />
+    <None Include="themes\default\images\.svn\all-wcprops" />
+    <None Include="themes\default\images\.svn\entries" />
+    <None Include="themes\default\images\.svn\prop-base\accordion_collapse.png.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\accordion_expand.png.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\button_a_bg.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\button_plain_hover.png.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\button_span_bg.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\calendar_nextmonth.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\calendar_nextyear.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\calendar_prevmonth.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\calendar_prevyear.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\combo_arrow.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\datagrid_header_bg.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\datagrid_row_collapse.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\datagrid_row_expand.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\datagrid_sort_asc.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\datagrid_sort_desc.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\datagrid_title_bg.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\datagrid_title_bg.png.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\dialog_content_bg.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\dialog_tools.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\dmenu_down_arrow.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\dmenu_enabled.png.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\dmenu_hover.png.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\dmenu_right_arrow.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\dmenu_sep.png.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\dmenu_test_fileprint.png.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\dmenu_test_graphics.png.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\dmenu_test_home.png.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\layout_button_down.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\layout_button_left.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\layout_button_right.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\layout_button_up.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\layout_collapse_down.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\layout_collapse_left.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\layout_collapse_right.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\layout_collapse_up.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\layout_split_h.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\layout_split_v.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\layout_title.png.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\menu.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\menu_downarrow.png.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\menu_rightarrow.png.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\menu_sep.png.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\menu_split_downarrow.png.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\messager_error.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\messager_info.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\messager_question.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\messager_warning.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\pagination_first.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\pagination_last.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\pagination_load.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\pagination_load.png.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\pagination_loading.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\pagination_next.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\pagination_prev.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\panel_loading.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\panel_title.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\panel_title.png.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\panel_tools.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\panel_tool_collapse.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\panel_tool_expand.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\shadow_total.png.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\spinner_arrow_down.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\spinner_arrow_up.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\tabs_active.png.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\tabs_close.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\tabs_enabled.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\tabs_enabled.png.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\tabs_leftarrow.png.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\tabs_rightarrow.png.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\tree_arrows.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\tree_checkbox_0.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\tree_checkbox_1.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\tree_checkbox_2.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\tree_collapsed.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\tree_dnd_no.png.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\tree_dnd_yes.png.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\tree_expanded.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\tree_file.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\tree_folder.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\tree_folder_open.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\tree_loading.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\validatebox_pointer.gif.svn-base" />
+    <None Include="themes\default\images\.svn\prop-base\validatebox_warning.png.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\accordion_collapse.png.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\accordion_expand.png.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\button_a_bg.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\button_plain_hover.png.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\button_span_bg.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\calendar_nextmonth.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\calendar_nextyear.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\calendar_prevmonth.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\calendar_prevyear.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\combo_arrow.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\datagrid_header_bg.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\datagrid_row_collapse.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\datagrid_row_expand.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\datagrid_sort_asc.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\datagrid_sort_desc.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\datagrid_title_bg.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\datagrid_title_bg.png.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\dialog_content_bg.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\dialog_tools.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\dmenu_down_arrow.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\dmenu_enabled.png.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\dmenu_hover.png.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\dmenu_right_arrow.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\dmenu_sep.png.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\dmenu_test_fileprint.png.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\dmenu_test_graphics.png.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\dmenu_test_home.png.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\layout_button_down.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\layout_button_left.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\layout_button_right.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\layout_button_up.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\layout_collapse_down.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\layout_collapse_left.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\layout_collapse_right.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\layout_collapse_up.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\layout_split_h.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\layout_split_v.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\layout_title.png.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\menu.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\menu_downarrow.png.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\menu_rightarrow.png.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\menu_sep.png.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\menu_split_downarrow.png.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\messager_error.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\messager_info.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\messager_question.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\messager_warning.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\pagination_first.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\pagination_last.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\pagination_load.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\pagination_load.png.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\pagination_loading.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\pagination_next.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\pagination_prev.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\panel_loading.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\panel_title.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\panel_title.png.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\panel_tools.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\panel_tool_collapse.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\panel_tool_expand.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\shadow_total.png.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\spinner_arrow_down.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\spinner_arrow_up.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\tabs_active.png.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\tabs_close.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\tabs_enabled.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\tabs_enabled.png.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\tabs_leftarrow.png.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\tabs_rightarrow.png.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\tree_arrows.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\tree_checkbox_0.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\tree_checkbox_1.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\tree_checkbox_2.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\tree_collapsed.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\tree_dnd_no.png.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\tree_dnd_yes.png.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\tree_expanded.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\tree_file.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\tree_folder.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\tree_folder_open.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\tree_loading.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\validatebox_pointer.gif.svn-base" />
+    <None Include="themes\default\images\.svn\text-base\validatebox_warning.png.svn-base" />
+    <None Include="themes\icons\.svn\all-wcprops" />
+    <None Include="themes\icons\.svn\entries" />
+    <None Include="themes\icons\.svn\prop-base\back.png.svn-base" />
+    <None Include="themes\icons\.svn\prop-base\cancel.png.svn-base" />
+    <None Include="themes\icons\.svn\prop-base\cut.png.svn-base" />
+    <None Include="themes\icons\.svn\prop-base\edit_add.png.svn-base" />
+    <None Include="themes\icons\.svn\prop-base\edit_remove.png.svn-base" />
+    <None Include="themes\icons\.svn\prop-base\filesave.png.svn-base" />
+    <None Include="themes\icons\.svn\prop-base\help.png.svn-base" />
+    <None Include="themes\icons\.svn\prop-base\no.png.svn-base" />
+    <None Include="themes\icons\.svn\prop-base\ok.png.svn-base" />
+    <None Include="themes\icons\.svn\prop-base\pencil.png.svn-base" />
+    <None Include="themes\icons\.svn\prop-base\print.png.svn-base" />
+    <None Include="themes\icons\.svn\prop-base\redo.png.svn-base" />
+    <None Include="themes\icons\.svn\prop-base\reload.png.svn-base" />
+    <None Include="themes\icons\.svn\prop-base\search.png.svn-base" />
+    <None Include="themes\icons\.svn\prop-base\undo.png.svn-base" />
+    <None Include="themes\icons\.svn\text-base\back.png.svn-base" />
+    <None Include="themes\icons\.svn\text-base\cancel.png.svn-base" />
+    <None Include="themes\icons\.svn\text-base\cut.png.svn-base" />
+    <None Include="themes\icons\.svn\text-base\edit_add.png.svn-base" />
+    <None Include="themes\icons\.svn\text-base\edit_remove.png.svn-base" />
+    <None Include="themes\icons\.svn\text-base\filesave.png.svn-base" />
+    <None Include="themes\icons\.svn\text-base\help.png.svn-base" />
+    <None Include="themes\icons\.svn\text-base\no.png.svn-base" />
+    <None Include="themes\icons\.svn\text-base\ok.png.svn-base" />
+    <None Include="themes\icons\.svn\text-base\pencil.png.svn-base" />
+    <None Include="themes\icons\.svn\text-base\print.png.svn-base" />
+    <None Include="themes\icons\.svn\text-base\redo.png.svn-base" />
+    <None Include="themes\icons\.svn\text-base\reload.png.svn-base" />
+    <None Include="themes\icons\.svn\text-base\search.png.svn-base" />
+    <None Include="themes\icons\.svn\text-base\undo.png.svn-base" />
+    <Content Include="treatise\TreadtieseHandler_.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ajax\.svn\prop-base\" />
+    <Folder Include="ajax\.svn\props\" />
+    <Folder Include="ajax\.svn\tmp\prop-base\" />
+    <Folder Include="ajax\.svn\tmp\props\" />
+    <Folder Include="ajax\.svn\tmp\text-base\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="css\.svn\prop-base\" />
+    <Folder Include="css\.svn\props\" />
+    <Folder Include="css\.svn\tmp\prop-base\" />
+    <Folder Include="css\.svn\tmp\props\" />
+    <Folder Include="css\.svn\tmp\text-base\" />
+    <Folder Include="images\.svn\props\" />
+    <Folder Include="images\.svn\tmp\prop-base\" />
+    <Folder Include="images\.svn\tmp\props\" />
+    <Folder Include="images\.svn\tmp\text-base\" />
+    <Folder Include="images\css\.svn\prop-base\" />
+    <Folder Include="images\css\.svn\props\" />
+    <Folder Include="images\css\.svn\tmp\prop-base\" />
+    <Folder Include="images\css\.svn\tmp\props\" />
+    <Folder Include="images\css\.svn\tmp\text-base\" />
+    <Folder Include="js\.svn\prop-base\" />
+    <Folder Include="js\.svn\props\" />
+    <Folder Include="js\.svn\tmp\prop-base\" />
+    <Folder Include="js\.svn\tmp\props\" />
+    <Folder Include="js\.svn\tmp\text-base\" />
+    <Folder Include="js\images\.svn\props\" />
+    <Folder Include="js\images\.svn\tmp\prop-base\" />
+    <Folder Include="js\images\.svn\tmp\props\" />
+    <Folder Include="js\images\.svn\tmp\text-base\" />
+    <Folder Include="themes\.svn\prop-base\" />
+    <Folder Include="themes\.svn\props\" />
+    <Folder Include="themes\.svn\tmp\prop-base\" />
+    <Folder Include="themes\.svn\tmp\props\" />
+    <Folder Include="themes\.svn\tmp\text-base\" />
+    <Folder Include="themes\default\.svn\prop-base\" />
+    <Folder Include="themes\default\.svn\props\" />
+    <Folder Include="themes\default\.svn\tmp\prop-base\" />
+    <Folder Include="themes\default\.svn\tmp\props\" />
+    <Folder Include="themes\default\.svn\tmp\text-base\" />
+    <Folder Include="themes\default\images\.svn\props\" />
+    <Folder Include="themes\default\images\.svn\tmp\prop-base\" />
+    <Folder Include="themes\default\images\.svn\tmp\props\" />
+    <Folder Include="themes\default\images\.svn\tmp\text-base\" />
+    <Folder Include="themes\icons\.svn\props\" />
+    <Folder Include="themes\icons\.svn\tmp\prop-base\" />
+    <Folder Include="themes\icons\.svn\tmp\props\" />
+    <Folder Include="themes\icons\.svn\tmp\text-base\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61779</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

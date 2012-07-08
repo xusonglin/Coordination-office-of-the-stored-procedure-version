@@ -1,0 +1,102 @@
+﻿html
+{
+    overflow: hidden;
+}
+body
+{
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #1D3647;
+}
+#header
+{
+    height: 42px;
+    vertical-align: top;
+    background-image: url(../images/login-top-bg.gif);
+    background-repeat: repeat-x;
+}
+#content
+{
+    height: 532px;
+    vertical-align: top;
+    background-image: url(../images/login_bg.jpg);
+    background-repeat: repeat-x;
+}
+#left
+{
+    width: 50%;
+    height: 532px;
+    text-align: right;
+    float: left;
+    background-image: url(../images/login-content-bg.gif);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+#tab_left
+{
+    width: 350px;
+    margin-top: 130px;
+    margin-right: 60px;
+    float:right;
+}
+#tab_right
+{
+    margin-top: 140px;
+}
+#tab_right tr
+{
+    height: 35px;
+    line-height: 35px;
+}
+.left_txt
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 25px;
+    color: #666666;
+    text-align: left;
+}
+.login_txt
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 25px;
+    color: #333333;
+}
+.login_txt_bt
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 25px;
+    color: #666666;
+    font-weight: bold;
+    text-align: center;
+}
+.left_a
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 25px;
+    color: #003366;
+    height: 25px;
+    text-decoration: none;
+}
+#right
+{
+    width: 49%;
+    float: right;
+}
+#footer
+{
+    height: 20px;
+    background-image: url(../images/login-buttom-bg.gif);
+    background-repeat: repeat-x;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #ABCAD3;
+    text-decoration: none;
+    line-height: 20px;
+    text-align: center;
+}
